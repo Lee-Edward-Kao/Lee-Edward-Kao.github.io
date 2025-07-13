@@ -821,6 +821,36 @@
             30% { transform: translateY(-5px); }
         }
         
+        /* SAMPLE QUESTIONS STYLES */
+        .sample-questions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .question-chip {
+            background: #f0f7ff;
+            border: 1px solid #3498db;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .question-chip:hover {
+            background: #3498db;
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .question-chip i {
+            margin-right: 8px;
+            font-size: 0.9em;
+        }
+        
         /* PRINT MODAL STYLES */
         .print-modal {
             position: fixed;
@@ -1273,7 +1303,7 @@
             smileyBtn.addEventListener('click', toggleChat);
             chatbotPrompt.addEventListener('click', toggleChat);
             
-            // Show greeting with sunflower animation
+            // Show greeting with sunflower animation and sample questions
             function showGreeting() {
                 // Clear any existing messages
                 chatMessages.innerHTML = '';
@@ -1290,9 +1320,33 @@
                         <div class="sunflower">🌻</div>
                         <div class="hand right-hand">👋</div>
                     </div>
-                    <p>I can tell you about Lee's experience with CGI Strata, technical skills, or volunteer work. What would you like to know?</p>
+                    <p>I can tell you about Lee's experience, skills, or volunteer work. Here are some sample questions you can ask:</p>
+                    <div class="sample-questions">
+                        <div class="question-chip" data-question="Summarize Lee's leadership experience">
+                            <i>👔</i> Summarize Lee's leadership experience
+                        </div>
+                        <div class="question-chip" data-question="What was Lee's core impact">
+                            <i>🚀</i> What was Lee's core impact?
+                        </div>
+                        <div class="question-chip" data-question="Tell me about Lee's professional experience">
+                            <i>💼</i> Tell me about Lee's professional experience
+                        </div>
+                        <div class="question-chip" data-question="How can I reach Lee">
+                            <i>📞</i> How can I reach Lee?
+                        </div>
+                    </div>
                 `;
                 chatMessages.appendChild(greeting);
+                
+                // Add event listeners to sample questions
+                const questionChips = greeting.querySelectorAll('.question-chip');
+                questionChips.forEach(chip => {
+                    chip.addEventListener('click', function() {
+                        const question = this.getAttribute('data-question');
+                        userInput.value = question;
+                        sendMessage();
+                    });
+                });
                 
                 // Scroll to bottom
                 chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -1357,18 +1411,24 @@
                 
                 if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
                     response = "Hello there! 😊 How can I help you today?";
+                } else if (message.includes('leadership') || message.includes('supervisor') || message.includes('mentor')) {
+                    response = "Lee served as a Collections Supervisor & Compliance Mentor at U.S. Bank from 2010-2015. He supervised 15+ collections specialists, developed training programs, and achieved an 85% promotion rate among team members. His leadership philosophy focuses on mentorship and creating career pathways.";
+                } else if (message.includes('professional role') || message.includes('position')) {
+                    response = "Lee's primary role was as a Technical Product Owner for CGI Strata at U.S. Bank (2015-2025). He owned the Strata Decisioning Platform, architected 1,000+ business rules, and achieved $1.5M in annual savings through platform modernization.";
                 } else if (message.includes('experience') || message.includes('background')) {
-                    response = "Lee has over 10 years of experience with CGI Strata decisioning platforms. He's designed over 1,000 production rules for financial systems!";
-                } else if (message.includes('contact') || message.includes('email') || message.includes('phone')) {
-                    response = "You can reach Lee at lee.edward.kao@outlook.com or call him at 503.915.6993. He's based in Vancouver, WA.";
+                    response = "Lee has over 10 years of experience with CGI Strata decisioning platforms. He's designed over 1,000 production rules for financial systems! Key roles include Technical Product Owner for CGI Strata and Collections Supervisor & Compliance Mentor.";
+                } else if (message.includes('core impact') || message.includes('achievement')) {
+                    response = "Lee's core impact includes: \n- Designed 1,000+ production rules in CGI Strata \n- Maintained 100% SLA compliance for 10+ years \n- Achieved $1.5M annual savings through platform modernization \n- Reduced false positives by 35% through rule optimization";
+                } else if (message.includes('contact') || message.includes('email') || message.includes('phone') || message.includes('reach')) {
+                    response = "You can reach Lee at lee.edward.kao@outlook.com or call him at 503.915.6993. He's based in Vancouver, WA and available for full-time roles or consulting opportunities.";
                 } else if (message.includes('volunteer') || message.includes('museum')) {
-                    response = "Lee volunteers at The Museum at Warm Springs, documenting cultural preservation initiatives. His photography has been featured in their publications!";
+                    response = "Lee volunteers at The Museum at Warm Springs, documenting cultural preservation initiatives. His photography has been featured in their publications and digital archives reaching 200,000+ annual visitors!";
                 } else if (message.includes('skill') || message.includes('expert')) {
-                    response = "Lee specializes in CGI Strata, CACS C360, SQL, AUTOSYS, and Agile methodologies. He's a certified expert in advanced rule design!";
+                    response = "Lee specializes in CGI Strata, CACS C360, SQL, AUTOSYS, and Agile methodologies. He's a certified expert in advanced rule design with skills in team mentoring, performance coaching, and career development.";
                 } else if (message.includes('help') || message.includes('support')) {
-                    response = "I can tell you about Lee's experience, skills, volunteer work, or contact information. What would you like to know? 😊";
+                    response = "I can tell you about Lee's experience, skills, volunteer work, or contact information. Try asking about his leadership experience, professional background, or core impact!";
                 } else {
-                    response = "That's interesting! I'm still learning, but I can tell you about Lee's professional background and skills. Try asking about his experience or contact info!";
+                    response = "That's interesting! I'm still learning, but I can tell you about Lee's professional background and skills. Try asking about his leadership experience or core impact!";
                 }
                 
                 addMessage(response, 'bot');
