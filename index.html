@@ -18,6 +18,8 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
+            overflow-x: hidden;
+            position: relative;
         }
 
         .container {
@@ -28,6 +30,8 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             animation: fadeIn 1s ease-out;
+            position: relative;
+            z-index: 10;
         }
 
         @keyframes fadeIn {
@@ -142,6 +146,7 @@
         .section:nth-child(4) { animation-delay: 0.4s; }
         .section:nth-child(5) { animation-delay: 0.5s; }
         .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
 
         @keyframes slideIn {
             to { opacity: 1; transform: translateX(0); }
@@ -233,6 +238,20 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
+        .volunteer-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e1f5fe 100%);
+            border-radius: 15px;
+            border-left: 5px solid #4CAF50;
+            transition: all 0.3s ease;
+        }
+
+        .volunteer-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
         .job-header {
             display: flex;
             justify-content: space-between;
@@ -266,6 +285,15 @@
             margin-bottom: 15px;
             color: #555;
             font-style: italic;
+        }
+
+        .philosophy {
+            font-style: italic;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(76, 175, 80, 0.05);
+            border-radius: 10px;
+            border-left: 3px solid #4CAF50;
         }
 
         .achievements {
@@ -458,9 +486,309 @@
             margin-left: 10px;
             vertical-align: middle;
         }
+        
+        .newsletter-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-link:hover {
+            background: #388E3C;
+            transform: translateY(-2px);
+        }
+        
+        .newsletter-link svg {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        /* CHATBOT STYLES */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        .chat-window {
+            width: 320px;
+            height: 420px;
+            background: white;
+            border-radius: 25px 25px 0 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        
+        .chatbot-container.active .chat-window {
+            display: block;
+            animation: chatAppear 0.5s forwards;
+        }
+        
+        @keyframes chatAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .chat-header {
+            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1em;
+            position: relative;
+        }
+        
+        .chat-messages {
+            height: 320px;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f9f9f9;
+            scrollbar-width: thin;
+            scrollbar-color: #ffc107 #f0f0f0;
+        }
+        
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .chat-messages::-webkit-scrollbar-thumb {
+            background-color: #ffc107;
+            border-radius: 3px;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+            animation: messageAppear 0.3s ease-out;
+            position: relative;
+        }
+        
+        @keyframes messageAppear {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .bot-message {
+            background: #e3f2fd;
+            border-bottom-left-radius: 5px;
+            align-self: flex-start;
+        }
+        
+        .user-message {
+            background: #d1ecf1;
+            border-bottom-right-radius: 5px;
+            margin-left: auto;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .chat-input input:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        .chat-input button {
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .chat-input button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .smiley-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+            border: none;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .smiley-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Sunflower animation */
+        .sunflower-animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            position: relative;
+            height: 120px;
+        }
+        
+        .hand {
+            position: absolute;
+            font-size: 40px;
+            z-index: 10;
+            animation: wave 2s ease-in-out infinite;
+        }
+        
+        .left-hand {
+            left: 20px;
+            animation-delay: 0.2s;
+        }
+        
+        .right-hand {
+            right: 20px;
+            animation-delay: 0.4s;
+        }
+        
+        .sunflower {
+            position: relative;
+            font-size: 50px;
+            animation: grow 1.5s ease-out forwards, floatSunflower 3s ease-in-out infinite;
+            opacity: 0;
+            transform: scale(0.5);
+            z-index: 5;
+        }
+        
+        .sunflower:nth-child(2) {
+            animation-delay: 0.2s, 0.5s;
+        }
+        
+        .sunflower:nth-child(3) {
+            animation-delay: 0.4s, 1s;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(25deg); }
+            50% { transform: rotate(-10deg); }
+            75% { transform: rotate(15deg); }
+        }
+        
+        @keyframes grow {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes floatSunflower {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .typing-indicator {
+            display: inline-flex;
+            align-items: center;
+            background: #e3f2fd;
+            padding: 8px 15px;
+            border-radius: 18px;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #3498db;
+            border-radius: 50%;
+            margin: 0 3px;
+            animation: typing 1.4s infinite;
+        }
+        
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        .sunflower-bg {
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.03;
+            z-index: 0;
+            animation: rotate 120s linear infinite;
+        }
+        
+        .sunflower-1 {
+            top: 10%;
+            left: 5%;
+        }
+        
+        .sunflower-2 {
+            top: 70%;
+            right: 7%;
+            animation-direction: reverse;
+        }
+        
+        .sunflower-3 {
+            bottom: 20%;
+            left: 15%;
+        }
     </style>
 </head>
 <body>
+    <!-- Background decorative elements -->
+    <div class="sunflower-bg sunflower-1">🌻</div>
+    <div class="sunflower-bg sunflower-2">🌻</div>
+    <div class="sunflower-bg sunflower-3">🌻</div>
+    
     <div class="container">
         <header class="header">
             <div class="header-content">
@@ -548,9 +876,43 @@
                 </div>
             </section>
             
-            <!-- Job Descriptions Section -->
             <section class="section">
-                <h2 class="section-title">Job Descriptions</h2>
+                <h2 class="section-title">Cultural Preservation & Volunteer Work</h2>
+                
+                <div class="volunteer-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Cultural Documentation Volunteer</div>
+                            <div class="company">The Museum at Warm Springs, Oregon</div>
+                        </div>
+                        <div class="duration">Nov 2019 - Present · 5 yrs 9 mos</div>
+                    </div>
+                    
+                    <div class="philosophy">
+                        "Technology should be humanized. My volunteer work documenting Indigenous heritage stems from that same conviction—that systems should serve people, not exclude them."
+                    </div>
+                    
+                    <ul class="achievements">
+                        <li>Documenting cultural preservation initiatives for Oregon's first Indigenous Museum</li>
+                        <li>50+ photographs featured in digital archives reaching 200,000+ annual visitors</li>
+                        <li>Contributing to the preservation of Indigenous heritage through visual storytelling</li>
+                        <li>Featured photographer in museum newsletters and publications</li>
+                    </ul>
+                    
+                    <a href="https://museum.warmsprings-nsn.gov/wp-content/uploads/2025/01/January-2025-News-from-The-Museum-at-Warm-Springs.pdf" 
+                       class="newsletter-link" 
+                       target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                        </svg>
+                        View My Featured Work in Museum Newsletter
+                    </a>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Professional Role Definitions</h2>
                 
                 <!-- Technical Product Owner Role -->
                 <div class="job-description-card">
@@ -559,27 +921,15 @@
                     </div>
                     <div class="job-desc-content">
                         <div class="job-desc-summary">
-                            Owned and managed the CGI Strata Decisioning Platform as Product Owner, aligning technical capabilities with enterprise goals and market needs. Engaged stakeholders to define features, prioritize deliverables, and ensure marketable capabilities.
+                            Owned and managed the CGI Strata Decisioning Platform as Product Owner, aligning technical capabilities with enterprise goals and market needs.
                         </div>
                         <ul class="job-desc-list">
                             <li>Owned product vision and roadmap for Strata decisioning platform <span class="ownership-badge">Product Owner</span></li>
-                            <li>Aligned strategic vision with stakeholders to shape outcome-based roadmaps and success metrics</li>
-                            <li>Drove product development with ownership of backlog management and stakeholder engagement</li>
+                            <li>Aligned strategic vision with stakeholders to shape outcome-based roadmaps</li>
+                            <li>Drove product development with ownership of backlog management</li>
                             <li>Managed product performance goals including outcomes and customer experience</li>
-                            <li>Owned all engagement for Strata portfolio throughout SDLC (adoption, collaboration)</li>
-                            <li>Developed and reported on performance metrics to identify improvement opportunities</li>
-                            <li>Leveraged OKRs (Objectives and Key Results) to prioritize roadmap initiatives</li>
+                            <li>Owned all engagement for Strata portfolio throughout SDLC</li>
                         </ul>
-                        <div class="job-desc-qualifications">
-                            <div class="job-desc-subtitle">Key Skills Demonstrated</div>
-                            <ul class="job-desc-list">
-                                <li>Expertise in critical interdependencies among product model system elements</li>
-                                <li>Technical understanding of product architecture and economics of technical investments</li>
-                                <li>Deep understanding of target customers through research (personas, story maps)</li>
-                                <li>Strong collaboration with software engineers to execute product vision</li>
-                                <li>Skills in product strategy, discovery, development, and agile methodologies</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 
@@ -590,28 +940,15 @@
                     </div>
                     <div class="job-desc-content">
                         <div class="job-desc-summary">
-                            Served as Strata architecture expert for U.S. Bank's Card Recovery Collections operations. Designed enterprise rule engine and provided cross-functional solution architecture.
+                            Served as Strata architecture expert for U.S. Bank's Card Recovery Collections operations.
                         </div>
                         <ul class="job-desc-list">
-                            <li>Architected 1,000+ business rules for Pre-Charge-offs, Charge-offs, and Re-Decision processes</li>
-                            <li>Designed comprehensive rules for Realtime-Settlement Collections operations</li>
-                            <li>Documented 1,000+ manual workflows to inform automation rules and workflow logic</li>
+                            <li>Architected 1,000+ business rules for financial decisioning processes</li>
+                            <li>Documented workflows to inform automation rules and workflow logic</li>
                             <li>Collaborated with stakeholders to translate business needs into technical requirements</li>
                             <li>Reduced false positives by 35% through advanced rule optimization</li>
                             <li>Eliminated $1.5M annually in vendor costs through platform modernization</li>
-                            <li>Achieved 100% success rate for batch jobs using AUTOSYS</li>
-                            <li>Provided production support and maintained 100% SLA compliance for critical decisions</li>
                         </ul>
-                        <div class="job-desc-qualifications">
-                            <div class="job-desc-subtitle">Platforms & Tools</div>
-                            <ul class="job-desc-list">
-                                <li>CGI Strata decisioning platform</li>
-                                <li>CACS C360 collections system</li>
-                                <li>SQL, WinSCP/PuTTY, AUTOSYS, JIRA</li>
-                                <li>Agile Scrum methodology</li>
-                                <li>Enterprise architecture frameworks</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -648,31 +985,158 @@
 
     <button class="print-btn" onclick="window.print()">🖨️ Print Resume</button>
     
+    <!-- Chatbot container -->
+    <div class="chatbot-container">
+        <div class="chat-window">
+            <div class="chat-header">Sunshine Assistant</div>
+            <div class="chat-messages" id="chat-messages">
+                <!-- Initial greeting message will be added by JavaScript -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Ask about Lee...">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+        <button class="smiley-btn" id="smiley-btn">😊</button>
+    </div>
+
     <script>
-        // Add smooth scrolling and interactive effects
         document.addEventListener('DOMContentLoaded', function() {
-            // Add typing effect to the name
-            const nameElement = document.querySelector('.name');
-            const originalText = nameElement.textContent;
-            nameElement.textContent = '';
-            let i = 0;
+            const chatbotContainer = document.querySelector('.chatbot-container');
+            const smileyBtn = document.getElementById('smiley-btn');
+            const chatWindow = document.querySelector('.chat-window');
+            const chatMessages = document.getElementById('chat-messages');
+            const userInput = document.getElementById('user-input');
+            const sendBtn = document.getElementById('send-btn');
             
-            function typeWriter() {
-                if (i < originalText.length) {
-                    nameElement.textContent += originalText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
+            let isFirstInteraction = true;
+            
+            // Toggle chat window
+            smileyBtn.addEventListener('click', function() {
+                chatbotContainer.classList.toggle('active');
+                
+                // If it's the first interaction, show the greeting
+                if (isFirstInteraction) {
+                    isFirstInteraction = false;
+                    showGreeting();
+                }
+            });
+            
+            // Show greeting with sunflower animation
+            function showGreeting() {
+                // Clear any existing messages
+                chatMessages.innerHTML = '';
+                
+                // Create greeting message
+                const greeting = document.createElement('div');
+                greeting.className = 'message bot-message';
+                greeting.innerHTML = `
+                    <p>Hello, hope you are having a good day! 😊</p>
+                    <div class="sunflower-animation">
+                        <div class="hand left-hand">👋</div>
+                        <div class="sunflower">🌻</div>
+                        <div class="sunflower">🌻</div>
+                        <div class="sunflower">🌻</div>
+                        <div class="hand right-hand">👋</div>
+                    </div>
+                    <p>I'm here to help you learn more about Lee! Ask about his experience, skills, or volunteer work.</p>
+                `;
+                chatMessages.appendChild(greeting);
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Send message function
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+                
+                // Add user message
+                addMessage(message, 'user');
+                userInput.value = '';
+                
+                // Simulate bot response after a delay
+                setTimeout(() => {
+                    showTypingIndicator();
+                    setTimeout(() => {
+                        removeTypingIndicator();
+                        respondToMessage(message);
+                    }, 1500);
+                }, 500);
+            }
+            
+            // Add message to chat
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}-message`;
+                messageDiv.textContent = text;
+                chatMessages.appendChild(messageDiv);
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Show typing indicator
+            function showTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'typing-indicator';
+                typingDiv.id = 'typing-indicator';
+                typingDiv.innerHTML = `
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                `;
+                chatMessages.appendChild(typingDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Remove typing indicator
+            function removeTypingIndicator() {
+                const typingIndicator = document.getElementById('typing-indicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
                 }
             }
             
-            setTimeout(typeWriter, 500);
-
-            // Add parallax effect to header
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const header = document.querySelector('.header');
-                header.style.transform = `translateY(${scrolled * 0.5}px)`;
+            // Bot responses
+            function respondToMessage(message) {
+                message = message.toLowerCase();
+                let response = '';
+                
+                if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+                    response = "Hello there! 😊 How can I help you today?";
+                } else if (message.includes('experience') || message.includes('background')) {
+                    response = "Lee has over 10 years of experience with CGI Strata decisioning platforms. He's designed over 1,000 production rules for financial systems!";
+                } else if (message.includes('contact') || message.includes('email') || message.includes('phone')) {
+                    response = "You can reach Lee at lee.edward.kao@outlook.com or call him at 503.915.6993. He's based in Vancouver, WA.";
+                } else if (message.includes('volunteer') || message.includes('museum')) {
+                    response = "Lee volunteers at The Museum at Warm Springs, documenting cultural preservation initiatives. His photography has been featured in their publications!";
+                } else if (message.includes('skill') || message.includes('expert')) {
+                    response = "Lee specializes in CGI Strata, CACS C360, SQL, AUTOSYS, and Agile methodologies. He's a certified expert in advanced rule design!";
+                } else if (message.includes('help') || message.includes('support')) {
+                    response = "I can tell you about Lee's experience, skills, volunteer work, or contact information. What would you like to know? 😊";
+                } else {
+                    response = "That's interesting! I'm still learning, but I can tell you about Lee's professional background and skills. Try asking about his experience or contact info!";
+                }
+                
+                addMessage(response, 'bot');
+            }
+            
+            // Event listeners
+            sendBtn.addEventListener('click', sendMessage);
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
             });
+            
+            // Initial greeting when chat is opened
+            setTimeout(() => {
+                if (chatbotContainer.classList.contains('active')) {
+                    showGreeting();
+                }
+            }, 1000);
         });
     </script>
 </body>
