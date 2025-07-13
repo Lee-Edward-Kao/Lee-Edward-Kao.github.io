@@ -540,7 +540,7 @@
             color: #555;
         }
 
-        /* CHATBOT STYLES - Bottom Left */
+        /* CHATBOT STYLES - Bottom Left with Purple Background */
         .chatbot-container {
             position: fixed;
             bottom: 30px;
@@ -552,8 +552,7 @@
         }
         
         .chatbot-prompt {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
             color: white;
             padding: 10px 15px;
             border-radius: 25px;
@@ -563,15 +562,17 @@
             transition: all 0.3s ease;
             cursor: pointer;
             animation: pulse 2s infinite;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             display: flex;
             align-items: center;
             gap: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .chatbot-prompt:hover {
             opacity: 1;
-            background: rgba(255, 255, 255, 0.25);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
             transform: translateY(-3px);
         }
         
@@ -819,6 +820,159 @@
             0%, 60%, 100% { transform: translateY(0); }
             30% { transform: translateY(-5px); }
         }
+        
+        /* PRINT MODAL STYLES */
+        .print-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .print-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .print-options {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+        
+        .print-modal.active .print-options {
+            transform: translateY(0);
+        }
+        
+        .print-options h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-size: 1.8em;
+        }
+        
+        .print-option {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #e9ecef;
+        }
+        
+        .print-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #3498db;
+        }
+        
+        .print-option h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .print-option p {
+            color: #555;
+            font-size: 0.95em;
+        }
+        
+        .print-option .icon {
+            font-size: 24px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        /* PRINT STYLES */
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            
+            .container {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+            }
+            
+            .print-btn, .chatbot-container, .print-modal {
+                display: none !important;
+            }
+            
+            .header::before {
+                display: none !important;
+            }
+        }
+        
+        /* PRINT MODE CLASSES */
+        .print-ats .container * {
+            background: white !important;
+            color: black !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
+        
+        .print-ats .highlight, 
+        .print-ats .mentor-badge,
+        .print-ats .ownership-badge,
+        .print-ats .newsletter-link,
+        .print-ats .skill-category,
+        .print-ats .impact-card,
+        .print-ats .experience-item,
+        .print-ats .volunteer-item,
+        .print-ats .job-description-card,
+        .print-ats .leadership-highlight {
+            background: white !important;
+            border: 1px solid #ccc !important;
+        }
+        
+        .print-ats .header {
+            background: #f0f0f0 !important;
+            color: #333 !important;
+        }
+        
+        .print-no-bg .container * {
+            background: white !important;
+            background-image: none !important;
+            color: #333 !important;
+        }
+        
+        .print-no-bg .header {
+            background: #f0f0f0 !important;
+            color: #333 !important;
+        }
+        
+        .print-full-bg {
+            /* Print with all backgrounds as is */
+        }
     </style>
 </head>
 <body>
@@ -1049,7 +1203,7 @@
         </main>
     </div>
 
-    <button class="print-btn" onclick="window.print()">🖨️ Print Resume</button>
+    <button class="print-btn" id="print-btn">🖨️ Print Resume</button>
     
     <!-- Chatbot container -->
     <div class="chatbot-container">
@@ -1067,6 +1221,29 @@
         <button class="smiley-btn" id="smiley-btn">😊</button>
     </div>
 
+    <!-- Print Modal -->
+    <div class="print-modal" id="print-modal">
+        <div class="print-options">
+            <button class="close-modal" id="close-modal">✕</button>
+            <h3>Select Print Format</h3>
+            
+            <div class="print-option" data-print="ats">
+                <h4><span class="icon">📄</span> ATS-Friendly Text Version</h4>
+                <p>Simple text-focused format optimized for Applicant Tracking Systems</p>
+            </div>
+            
+            <div class="print-option" data-print="no-bg">
+                <h4><span class="icon">🎨</span> Print With No Background</h4>
+                <p>Preserves layout and styling without background colors/images</p>
+            </div>
+            
+            <div class="print-option" data-print="full-bg">
+                <h4><span class="icon">🖼️</span> Print With Full Background</h4>
+                <p>Print with all colors and design elements (uses more ink)</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const chatbotContainer = document.querySelector('.chatbot-container');
@@ -1076,6 +1253,9 @@
             const chatMessages = document.getElementById('chat-messages');
             const userInput = document.getElementById('user-input');
             const sendBtn = document.getElementById('send-btn');
+            const printBtn = document.getElementById('print-btn');
+            const printModal = document.getElementById('print-modal');
+            const closeModal = document.getElementById('close-modal');
             
             let isFirstInteraction = true;
             
@@ -1194,12 +1374,58 @@
                 addMessage(response, 'bot');
             }
             
-            // Event listeners
+            // Event listeners for chat
             sendBtn.addEventListener('click', sendMessage);
             userInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     sendMessage();
                 }
+            });
+            
+            // Print functionality
+            printBtn.addEventListener('click', function() {
+                printModal.classList.add('active');
+            });
+            
+            closeModal.addEventListener('click', function() {
+                printModal.classList.remove('active');
+            });
+            
+            // Close modal when clicking outside
+            printModal.addEventListener('click', function(e) {
+                if (e.target === printModal) {
+                    printModal.classList.remove('active');
+                }
+            });
+            
+            // Handle print options
+            const printOptions = document.querySelectorAll('.print-option');
+            printOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const printType = this.getAttribute('data-print');
+                    
+                    // Remove any existing print classes
+                    document.body.classList.remove('print-ats', 'print-no-bg', 'print-full-bg');
+                    
+                    // Apply specific print class
+                    if (printType === 'ats') {
+                        document.body.classList.add('print-ats');
+                    } else if (printType === 'no-bg') {
+                        document.body.classList.add('print-no-bg');
+                    } else if (printType === 'full-bg') {
+                        document.body.classList.add('print-full-bg');
+                    }
+                    
+                    // Close modal and print
+                    printModal.classList.remove('active');
+                    setTimeout(() => {
+                        window.print();
+                        // Reset after printing
+                        setTimeout(() => {
+                            document.body.classList.remove('print-ats', 'print-no-bg', 'print-full-bg');
+                        }, 500);
+                    }, 500);
+                });
             });
             
             // Initial animations
