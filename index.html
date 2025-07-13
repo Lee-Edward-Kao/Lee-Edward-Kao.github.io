@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lee Edward Kao - Senior Product Manager</title>
     <style>
+        /* Your existing styles */
         * {
             margin: 0;
             padding: 0;
@@ -408,6 +409,223 @@
                 display: none;
             }
         }
+
+        /* Chatbot Styles */
+        .chatbot-btn {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .chatbot-btn img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .chat-container {
+            position: fixed;
+            bottom: 170px;
+            right: 30px;
+            width: 350px;
+            height: 450px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .chat-container.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 15px;
+            border-radius: 18px;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .bot-message {
+            background: #e9ecef;
+            border-bottom-left-radius: 5px;
+            align-self: flex-start;
+        }
+
+        .user-message {
+            background: #3498db;
+            color: white;
+            border-bottom-right-radius: 5px;
+            align-self: flex-end;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+            font-size: 1em;
+        }
+
+        .chat-input button {
+            background: #3498db;
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .chat-input button:hover {
+            background: #2c3e50;
+        }
+
+        .typing-indicator {
+            display: none;
+            background: #e9ecef;
+            padding: 12px 15px;
+            border-radius: 18px;
+            align-self: flex-start;
+            margin-top: 5px;
+        }
+
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            background: #666;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            animation: typing 1s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .disclaimer {
+            font-size: 0.7em;
+            color: #777;
+            text-align: center;
+            padding: 10px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+
+        .suggested-questions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .question-btn {
+            background: #e9ecef;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .question-btn:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .chat-container {
+                width: 300px;
+                height: 400px;
+                right: 15px;
+                bottom: 140px;
+            }
+            
+            .chatbot-btn {
+                bottom: 80px;
+                right: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -527,6 +745,47 @@
     </div>
 
     <button class="print-btn" onclick="window.print()">🖨️ Print Resume</button>
+    
+    <!-- Chatbot Button -->
+    <button class="chatbot-btn" id="chatbotToggle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+        </svg>
+    </button>
+    
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <h3>Resume Assistant</h3>
+            <button class="close-btn" id="closeChat">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                Hi! I'm your resume assistant. Ask me anything about Lee's background, experience, or skills.
+            </div>
+            <div class="suggested-questions">
+                <button class="question-btn" data-question="What are Lee's key achievements?">Key achievements</button>
+                <button class="question-btn" data-question="Tell me about Lee's experience at U.S. Bank">U.S. Bank experience</button>
+                <button class="question-btn" data-question="What technical skills does Lee have?">Technical skills</button>
+            </div>
+        </div>
+        <div class="typing-indicator" id="typingIndicator">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ask about Lee's resume...">
+            <button id="sendMessage">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="disclaimer">
+            This AI assistant answers based on Lee's resume content. Responses may not be 100% accurate.
+        </div>
+    </div>
 
     <script>
         // Add smooth scrolling and interactive effects
@@ -564,6 +823,109 @@
                 const header = document.querySelector('.header');
                 header.style.transform = `translateY(${scrolled * 0.5}px)`;
             });
+        });
+
+        // Chatbot functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotToggle = document.getElementById('chatbotToggle');
+            const chatContainer = document.getElementById('chatContainer');
+            const closeChat = document.getElementById('closeChat');
+            const chatMessages = document.getElementById('chatMessages');
+            const userInput = document.getElementById('userInput');
+            const sendMessage = document.getElementById('sendMessage');
+            const typingIndicator = document.getElementById('typingIndicator');
+            const questionBtns = document.querySelectorAll('.question-btn');
+            
+            // Toggle chat visibility
+            chatbotToggle.addEventListener('click', function() {
+                chatContainer.classList.toggle('active');
+            });
+            
+            closeChat.addEventListener('click', function() {
+                chatContainer.classList.remove('active');
+            });
+            
+            // Send message on button click
+            sendMessage.addEventListener('click', function() {
+                sendUserMessage();
+            });
+            
+            // Send message on Enter key
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendUserMessage();
+                }
+            });
+            
+            // Suggested questions
+            questionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    userInput.value = this.getAttribute('data-question');
+                    sendUserMessage();
+                });
+            });
+            
+            // Send user message and get response
+            function sendUserMessage() {
+                const message = userInput.value.trim();
+                if (message) {
+                    // Add user message to chat
+                    addMessageToChat(message, 'user');
+                    
+                    // Clear input
+                    userInput.value = '';
+                    
+                    // Show typing indicator
+                    typingIndicator.style.display = 'flex';
+                    
+                    // Scroll to bottom
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                    
+                    // Simulate AI response (in a real implementation, you'd call an API here)
+                    setTimeout(() => {
+                        typingIndicator.style.display = 'none';
+                        const response = generateResponse(message);
+                        addMessageToChat(response, 'bot');
+                    }, 1000);
+                }
+            }
+            
+            // Add message to chat UI
+            function addMessageToChat(message, sender) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+                messageElement.textContent = message;
+                chatMessages.appendChild(messageElement);
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Generate AI response (simulated - in real use, replace with API call)
+            function generateResponse(userMessage) {
+                const lowerMessage = userMessage.toLowerCase();
+                
+                // Sample responses based on resume content
+                if (lowerMessage.includes('achievement') || lowerMessage.includes('accomplish')) {
+                    return "Lee's key achievements include designing 1,000+ production rules in CGI STRATA for the largest U.S. Bank implementation, maintaining 100% SLA compliance for 10+ years, and achieving $1.5M in annual savings through platform modernization.";
+                } else if (lowerMessage.includes('skill') || lowerMessage.includes('technical')) {
+                    return "Lee's technical skills include CGI STRATA, CACS C360, SQL, WinSCP/PuTTY, AUTOSYS, and JIRA. His methodologies include Agile Scrum and Enterprise Architecture.";
+                } else if (lowerMessage.includes('experience') || lowerMessage.includes('u.s. bank')) {
+                    return "At U.S. Bank, Lee served as Principal STRATA Architect (2015-2025) and Collections Training & Compliance Leader (2010-2015). He architected Card Recovery Collections business rules and trained 100+ collectors on compliance and customer empathy techniques.";
+                } else if (lowerMessage.includes('education') || lowerMessage.includes('certif')) {
+                    return "Lee holds CGI STRATA Certifications in Advanced Rule Design. His academic background includes 120+ university credits with a Chemistry major, and coursework in Calculus I-III, Linear Algebra, Statistics, C++, and Unix.";
+                } else if (lowerMessage.includes('contact') || lowerMessage.includes('reach')) {
+                    return "You can contact Lee via email at lee.edward.kao@outlook.com or phone at 503.915.6993. He's located in Vancouver, WA.";
+                } else {
+                    return "I can answer questions about Lee's professional experience, technical skills, key achievements, education, and certifications. Please try asking about one of those topics!";
+                }
+            }
+            
+            // Initial greeting after a short delay
+            setTimeout(() => {
+                addMessageToChat("Try asking: 'What are Lee's key achievements?' or 'Tell me about Lee's technical skills'", 'bot');
+            }, 2000);
         });
     </script>
 </body>
