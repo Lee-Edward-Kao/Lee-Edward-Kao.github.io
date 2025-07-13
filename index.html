@@ -761,12 +761,12 @@
         </div>
         <div class="chat-messages" id="chatMessages">
             <div class="message bot-message">
-                Hi! I'm your resume assistant. Ask me anything about Lee's background, experience, or skills.
+                Hi! I'm your resume assistant. Ask me anything about Lee's background, experience, skills, or performance reviews.
             </div>
             <div class="suggested-questions">
                 <button class="question-btn" data-question="What are Lee's key achievements?">Key achievements</button>
-                <button class="question-btn" data-question="Tell me about Lee's experience at U.S. Bank">U.S. Bank experience</button>
-                <button class="question-btn" data-question="What technical skills does Lee have?">Technical skills</button>
+                <button class="question-btn" data-question="What do managers say about Lee's performance?">Manager feedback</button>
+                <button class="question-btn" data-question="What projects has Lee worked on?">Projects</button>
             </div>
         </div>
         <div class="typing-indicator" id="typingIndicator">
@@ -783,7 +783,7 @@
             </button>
         </div>
         <div class="disclaimer">
-            This AI assistant answers based on Lee's resume content. Responses may not be 100% accurate.
+            This AI assistant answers based on Lee's resume content and performance reviews. Responses may not be 100% accurate.
         </div>
     </div>
 
@@ -836,6 +836,51 @@
             const typingIndicator = document.getElementById('typingIndicator');
             const questionBtns = document.querySelectorAll('.question-btn');
             
+            // Performance Review Knowledge Base
+            const performanceReviews = {
+                achievements: [
+                    "Designed 1,000+ production rules in CGI STRATA (largest U.S. Bank implementation)",
+                    "Maintained 100% SLA compliance for 10+ years on critical payment/collections decisions",
+                    "Achieved $1.5M annual savings by modernizing STRATA from vendor-dependent tool to enterprise engine",
+                    "Successfully delivered 100% of committed stories in 2024 with zero recalls after production",
+                    "Reduced false positives by 35% through advanced rule optimization",
+                    "Reduced delinquency rates by 22% and customer complaints by 35% through targeted programs",
+                    "Automated agency reporting using Python after completing Python Bootcamp"
+                ],
+                skills: [
+                    "CGI STRATA Platform Ownership",
+                    "Business Logic SME",
+                    "Enterprise Rule Engine Design",
+                    "Cross-Functional Solution Architecture",
+                    "Production Support & Incident Management",
+                    "Agile Scrum Methodology",
+                    "Python Automation Scripting",
+                    "Stakeholder Collaboration"
+                ],
+                feedback: [
+                    "Recognized as STRATA functional expert for C360 - 'Lee is the functional strata expert for C360' (2023)",
+                    "Highly regarded by business line owners - 'constantly relied upon to provide strategic direction' (2023)",
+                    "Praised for reliability - 'demonstrated willingness to meet challenges, calm demeanor earned respect of peers' (2022)",
+                    "Noted for cost savings - 'eliminated vendor dependency for STRATA support, significant cost saving' (2021)",
+                    "Valued for collaboration - 'fosters good working relationships with everyone in our team and business lines' (2021)"
+                ],
+                projects: [
+                    "PSSCACS-1086: Set Litigation as Preferred Channel for charged-off Accounts ($100k+)",
+                    "PSSCACS-B21: Created new placement stream for Potential Deceased Accounts",
+                    "PSSCACS-4851: Redesign of SCRA Account Flow",
+                    "PSSCACS-6581: Designed New Location Code for PCO Vendor",
+                    "Cloud migration of FAMG DB",
+                    "Automation of Agency Reporting using Python"
+                ],
+                responsibilities: [
+                    "On-call (primary/secondary) support for batch processing with 100% SLA compliance",
+                    "Monthly zip file management for Retail Collections, Mortgage, and Debt Management",
+                    "STRATA documentation maintenance on SharePoint",
+                    "FAMG user access setup and database management",
+                    "Production issue resolution through shared mailbox support"
+                ]
+            };
+            
             // Toggle chat visibility
             chatbotToggle.addEventListener('click', function() {
                 chatContainer.classList.toggle('active');
@@ -881,7 +926,7 @@
                     // Scroll to bottom
                     chatMessages.scrollTop = chatMessages.scrollHeight;
                     
-                    // Simulate AI response (in a real implementation, you'd call an API here)
+                    // Generate response
                     setTimeout(() => {
                         typingIndicator.style.display = 'none';
                         const response = generateResponse(message);
@@ -906,25 +951,70 @@
             function generateResponse(userMessage) {
                 const lowerMessage = userMessage.toLowerCase();
                 
-                // Sample responses based on resume content
+                // Performance review-based responses
                 if (lowerMessage.includes('achievement') || lowerMessage.includes('accomplish')) {
-                    return "Lee's key achievements include designing 1,000+ production rules in CGI STRATA for the largest U.S. Bank implementation, maintaining 100% SLA compliance for 10+ years, and achieving $1.5M in annual savings through platform modernization.";
+                    const randomAchievements = [...performanceReviews.achievements]
+                        .sort(() => 0.5 - Math.random())
+                        .slice(0, 3)
+                        .join('\n• ');
+                    return `Key achievements from performance reviews:\n• ${randomAchievements}\n\nI've consistently delivered high-impact results throughout my career at U.S. Bank.`;
+                    
                 } else if (lowerMessage.includes('skill') || lowerMessage.includes('technical')) {
-                    return "Lee's technical skills include CGI STRATA, CACS C360, SQL, WinSCP/PuTTY, AUTOSYS, and JIRA. His methodologies include Agile Scrum and Enterprise Architecture.";
-                } else if (lowerMessage.includes('experience') || lowerMessage.includes('u.s. bank')) {
-                    return "At U.S. Bank, Lee served as Principal STRATA Architect (2015-2025) and Collections Training & Compliance Leader (2010-2015). He architected Card Recovery Collections business rules and trained 100+ collectors on compliance and customer empathy techniques.";
-                } else if (lowerMessage.includes('education') || lowerMessage.includes('certif')) {
-                    return "Lee holds CGI STRATA Certifications in Advanced Rule Design. His academic background includes 120+ university credits with a Chemistry major, and coursework in Calculus I-III, Linear Algebra, Statistics, C++, and Unix.";
-                } else if (lowerMessage.includes('contact') || lowerMessage.includes('reach')) {
-                    return "You can contact Lee via email at lee.edward.kao@outlook.com or phone at 503.915.6993. He's located in Vancouver, WA.";
+                    return `My technical skills and strengths as noted in performance reviews include:\n• ${performanceReviews.skills.join('\n• ')}\n\nManagers have consistently praised my expertise in STRATA platform and cross-functional collaboration.`;
+                    
+                } else if (lowerMessage.includes('feedback') || lowerMessage.includes('manager') || lowerMessage.includes('review')) {
+                    const randomFeedback = [...performanceReviews.feedback]
+                        .sort(() => 0.5 - Math.random())
+                        .slice(0, 2)
+                        .join('\n\n');
+                    return `Manager feedback from my performance reviews:\n\n${randomFeedback}\n\nI've consistently received 'Meaningful Performance' ratings throughout my career at U.S. Bank.`;
+                    
+                } else if (lowerMessage.includes('project') || lowerMessage.includes('initiative')) {
+                    const randomProjects = [...performanceReviews.projects]
+                        .sort(() => 0.5 - Math.random())
+                        .slice(0, 3)
+                        .join('\n• ');
+                    return `Notable projects I've delivered:\n• ${randomProjects}\n\nAll projects were completed on time without failures or delays as noted in my performance reviews.`;
+                    
+                } else if (lowerMessage.includes('responsibilit') || lowerMessage.includes('role')) {
+                    return `My key responsibilities beyond core development work:\n• ${performanceReviews.responsibilities.join('\n• ')}\n\nI've successfully balanced development work with operational duties while maintaining 100% SLA compliance.`;
+                    
+                } else if (lowerMessage.includes('python') || lowerMessage.includes('automation')) {
+                    return "I completed Python Bootcamp training and immediately applied it to automate agency reporting. Managers noted: 'Lee took new project to develop Automation Agency Reporting using Python' and 'using Python learning to translate work scripts'. This demonstrates my initiative in continuous learning and application of new skills.";
+                    
+                } else if (lowerMessage.includes('cost saving') || lowerMessage.includes('save money')) {
+                    return "My performance reviews highlight significant cost savings: 'Eliminated $1.5M annually in vendor costs through platform modernization' and 'eliminated vendor dependency for STRATA support, which is a significant cost saving for the business line'. I focus on creating efficient, cost-effective solutions.";
+                    
+                } else if (lowerMessage.includes('sla') || lowerMessage.includes('service level')) {
+                    return "I've maintained perfect SLA compliance throughout my career. Performance reviews state: 'Never breached service level agreement (SLAs)', 'Have never missed SLA when on-call', and 'Closing and resolving all incidents within schedule'. This reflects my commitment to operational excellence.";
+                    
+                } else if (lowerMessage.includes('collaborat') || lowerMessage.includes('team')) {
+                    return "Collaboration is central to my approach. Managers have noted: 'Lee shows openness and respect toward others' perspective', 'fosters good working relationships', and 'work well with teammates creating an open relationship to meet deadlines'. I prioritize cross-functional alignment to deliver successful outcomes.";
+                    
+                } else if (lowerMessage.includes('performance review') || lowerMessage.includes('evaluation')) {
+                    return "I've consistently received 'Meaningful Performance' ratings at U.S. Bank. Key themes from my reviews:\n- Expertise in STRATA decisioning\n- Consistent on-time delivery\n- Cost savings through innovation\n- Perfect SLA compliance record\n- Strong cross-functional collaboration\n- Initiative in learning new skills like Python\n\nManagers have described me as: 'a very hard working and dedicated team member' and 'a subject matter expert for the STRATA business line'.";
+                    
                 } else {
-                    return "I can answer questions about Lee's professional experience, technical skills, key achievements, education, and certifications. Please try asking about one of those topics!";
+                    // Existing resume-based responses
+                    if (lowerMessage.includes('achievement') || lowerMessage.includes('accomplish')) {
+                        return "Lee's key achievements include designing 1,000+ production rules in CGI STRATA for the largest U.S. Bank implementation, maintaining 100% SLA compliance for 10+ years, and achieving $1.5M in annual savings through platform modernization.";
+                    } else if (lowerMessage.includes('skill') || lowerMessage.includes('technical')) {
+                        return "Lee's technical skills include CGI STRATA, CACS C360, SQL, WinSCP/PuTTY, AUTOSYS, and JIRA. His methodologies include Agile Scrum and Enterprise Architecture.";
+                    } else if (lowerMessage.includes('experience') || lowerMessage.includes('u.s. bank')) {
+                        return "At U.S. Bank, Lee served as Principal STRATA Architect (2015-2025) and Collections Training & Compliance Leader (2010-2015). He architected Card Recovery Collections business rules and trained 100+ collectors on compliance and customer empathy techniques.";
+                    } else if (lowerMessage.includes('education') || lowerMessage.includes('certif')) {
+                        return "Lee holds CGI STRATA Certifications in Advanced Rule Design. His academic background includes 120+ university credits with a Chemistry major, and coursework in Calculus I-III, Linear Algebra, Statistics, C++, and Unix.";
+                    } else if (lowerMessage.includes('contact') || lowerMessage.includes('reach')) {
+                        return "You can contact Lee via email at lee.edward.kao@outlook.com or phone at 503.915.6993. He's located in Vancouver, WA.";
+                    } else {
+                        return "I can answer questions about Lee's professional experience, technical skills, key achievements, education, certifications, and performance reviews. Please try asking about one of those topics!";
+                    }
                 }
             }
             
             // Initial greeting after a short delay
             setTimeout(() => {
-                addMessageToChat("Try asking: 'What are Lee's key achievements?' or 'Tell me about Lee's technical skills'", 'bot');
+                addMessageToChat("Try asking: 'What do managers say about your performance?' or 'Tell me about your Python projects'", 'bot');
             }, 2000);
         });
     </script>
