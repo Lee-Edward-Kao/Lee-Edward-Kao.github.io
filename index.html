@@ -380,6 +380,9 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .print-btn:hover {
@@ -859,7 +862,7 @@
             font-size: 0.9em;
         }
         
-        /* PRINT MODAL STYLES */
+        /* PRINT MODAL STYLES - Enhanced for Mobile */
         .print-modal {
             position: fixed;
             top: 0;
@@ -874,6 +877,8 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
+            padding: 15px;
+            box-sizing: border-box;
         }
         
         .print-modal.active {
@@ -885,11 +890,13 @@
             background: white;
             border-radius: 20px;
             padding: 30px;
-            width: 90%;
+            width: 100%;
             max-width: 500px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             transform: translateY(20px);
             transition: transform 0.4s ease;
+            max-height: 90vh;
+            overflow-y: auto;
         }
         
         .print-modal.active .print-options {
@@ -945,6 +952,7 @@
             font-size: 24px;
             cursor: pointer;
             color: #666;
+            z-index: 10;
         }
         
         /* PRINT STYLES */
@@ -961,7 +969,7 @@
                 margin: 0 !important;
             }
             
-            .print-btn, .chatbot-container, .print-modal {
+            .print-btn, .chatbot-container, .print-modal, .sunflower-assistant {
                 display: none !important;
             }
             
@@ -1010,6 +1018,117 @@
         
         .print-full-bg {
             /* Print with all backgrounds as is */
+        }
+        
+        /* SUNFLOWER ASSISTANT STYLES */
+        .sunflower-assistant {
+            position: fixed;
+            bottom: 160px;
+            left: 30px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+            pointer-events: none;
+        }
+
+        .sunflower-assistant.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sunflower-animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 120px;
+            width: 120px;
+        }
+
+        .hand {
+            position: absolute;
+            font-size: 30px;
+            z-index: 10;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        .left-hand {
+            left: 0;
+            animation-delay: 0.2s;
+        }
+
+        .right-hand {
+            right: 0;
+            animation-delay: 0.4s;
+        }
+
+        .sunflower {
+            position: relative;
+            font-size: 50px;
+            animation: grow 1.5s ease-out forwards, floatSunflower 3s ease-in-out infinite;
+            opacity: 0;
+            transform: scale(0.5);
+            z-index: 5;
+        }
+
+        .sunflower:nth-child(2) {
+            animation-delay: 0.2s, 0.5s;
+        }
+
+        .sunflower:nth-child(3) {
+            animation-delay: 0.4s, 1s;
+        }
+
+        .welcome-text {
+            background: rgba(255, 255, 255, 0.9);
+            color: #2c3e50;
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 14px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 180px;
+            text-align: center;
+            animation: fadeInText 1s ease-out 1.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInText {
+            to { opacity: 1; }
+        }
+        
+        /* Mobile-specific enhancements */
+        @media (max-width: 480px) {
+            .print-options {
+                padding: 20px;
+            }
+            
+            .print-option {
+                padding: 15px;
+            }
+            
+            .print-option h4 {
+                font-size: 1.1em;
+            }
+            
+            .print-option p {
+                font-size: 0.85em;
+            }
+            
+            .close-modal {
+                top: 10px;
+                right: 10px;
+                font-size: 20px;
+            }
+            
+            .print-options h3 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -1263,6 +1382,18 @@
         <button class="smiley-btn" id="smiley-btn">😊</button>
     </div>
 
+    <!-- Sunflower assistant -->
+    <div class="sunflower-assistant" id="sunflower-assistant">
+        <div class="sunflower-animation">
+            <div class="hand left-hand">👋</div>
+            <div class="sunflower">🌻</div>
+            <div class="sunflower">🌻</div>
+            <div class="sunflower">🌻</div>
+            <div class="hand right-hand">👋</div>
+        </div>
+        <div class="welcome-text">Hi! I'm Lee's Sunshine Assistant 🌻</div>
+    </div>
+
     <!-- Print Modal -->
     <div class="print-modal" id="print-modal">
         <div class="print-options">
@@ -1298,12 +1429,28 @@
             const printBtn = document.getElementById('print-btn');
             const printModal = document.getElementById('print-modal');
             const closeModal = document.getElementById('close-modal');
+            const sunflowerAssistant = document.getElementById('sunflower-assistant');
             
             let isFirstInteraction = true;
+            
+            // Show sunflower assistant on page load
+            setTimeout(() => {
+                sunflowerAssistant.classList.add('active');
+            }, 1000);
             
             // Toggle chat window
             function toggleChat() {
                 chatbotContainer.classList.toggle('active');
+                
+                // Hide sunflower when chat is open
+                if (chatbotContainer.classList.contains('active')) {
+                    sunflowerAssistant.style.opacity = '0';
+                    sunflowerAssistant.style.pointerEvents = 'none';
+                } else {
+                    setTimeout(() => {
+                        sunflowerAssistant.style.opacity = '1';
+                    }, 500);
+                }
                 
                 // If it's the first interaction, show the greeting
                 if (isFirstInteraction && chatbotContainer.classList.contains('active')) {
@@ -1314,6 +1461,19 @@
             
             smileyBtn.addEventListener('click', toggleChat);
             chatbotPrompt.addEventListener('click', toggleChat);
+            
+            // Close chat function
+            function closeChat() {
+                chatbotContainer.classList.remove('active');
+                setTimeout(() => {
+                    sunflowerAssistant.style.opacity = '1';
+                }, 500);
+            }
+            
+            // Add event listener to close button in chat header
+            document.querySelector('.chat-header').addEventListener('click', function() {
+                closeChat();
+            });
             
             // Show greeting with sunflower animation and sample questions
             function showGreeting() {
@@ -1483,19 +1643,22 @@
                 }
             });
             
-            // Print functionality
+            // Print functionality - Enhanced for mobile
             printBtn.addEventListener('click', function() {
                 printModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
             });
             
             closeModal.addEventListener('click', function() {
                 printModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
             });
             
             // Close modal when clicking outside
             printModal.addEventListener('click', function(e) {
                 if (e.target === printModal) {
                     printModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
                 }
             });
             
@@ -1519,6 +1682,8 @@
                     
                     // Close modal and print
                     printModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    
                     setTimeout(() => {
                         window.print();
                         // Reset after printing
