@@ -356,6 +356,14 @@
             .main-content { padding: 30px 20px; }
             .contact-info { flex-direction: column; align-items: center; }
             .job-header { flex-direction: column; align-items: flex-start; }
+            
+            /* Mobile print button fix */
+            .print-btn {
+                bottom: 100px;
+                right: 20px;
+                padding: 12px 15px;
+                font-size: 14px;
+            }
         }
 
         .print-btn {
@@ -1332,8 +1340,8 @@
                         <div class="question-chip" data-question="What was Lee's core impact">
                             <i>🚀</i> What was Lee's core impact?
                         </div>
-                        <div class="question-chip" data-question="Tell me about Lee's professional experience">
-                            <i>💼</i> Tell me about Lee's professional experience
+                        <div class="question-chip" data-question="What does Lee do beside work">
+                            <i>🌻</i> What does Lee do beside work?
                         </div>
                         <div class="question-chip" data-question="How can I reach Lee">
                             <i>📞</i> How can I reach Lee?
@@ -1415,8 +1423,8 @@
                 
                 if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
                     response = "Hello there! 😊 How can I help you today?";
-                } else if (message.includes('leadership') || message.includes('supervisor') || message.includes('mentor')) {
-                    response = "Lee served as a Collections Supervisor & Compliance Mentor at U.S. Bank from 2010-2015. He supervised 15+ collections specialists, developed training programs, and achieved an 85% promotion rate among team members. His leadership philosophy focuses on mentorship and creating career pathways.";
+                } else if (message.includes('leadership') || message.includes('supervisor') || message.includes('mentor') || message.includes('👔')) {
+                    response = "Lee has extensive leadership experience:\n\n- As a Technical Product Manager at U.S. Bank, he led cross-functional teams and drove product vision\n- Served as Collections Supervisor & Compliance Mentor (2010-2015)\n- Supervised 15+ collections specialists with 85% promotion rate\n- Developed training programs and maintained 100% compliance audit pass rate\n- Reduced customer complaints by 35% through empathy-focused training\n- Known for creative problem-solving and removing vendor dependencies";
                 } else if (message.includes('professional role') || message.includes('position')) {
                     response = "Lee's primary role was as a Technical Product Owner for CGI Strata at U.S. Bank (2015-2025). He owned the Strata Decisioning Platform, architected 1,000+ business rules, and achieved $1.5M in annual savings through platform modernization.";
                 } else if (message.includes('experience') || message.includes('background')) {
@@ -1425,14 +1433,14 @@
                     response = "Lee's core impact includes: \n- Designed 1,000+ production rules in CGI Strata \n- Maintained 100% SLA compliance for 10+ years \n- Achieved $1.5M annual savings through platform modernization \n- Reduced false positives by 35% through rule optimization";
                 } else if (message.includes('contact') || message.includes('email') || message.includes('phone') || message.includes('reach')) {
                     response = "You can reach Lee at lee.edward.kao@outlook.com or call him at 503.915.6993. He's based in Vancouver, WA and available for full-time roles or consulting opportunities.";
-                } else if (message.includes('volunteer') || message.includes('museum')) {
-                    response = "Lee volunteers at The Museum at Warm Springs, documenting cultural preservation initiatives. His photography has been featured in their publications and digital archives reaching 200,000+ annual visitors!";
+                } else if (message.includes('volunteer') || message.includes('museum') || message.includes('beside work') || message.includes('photography') || message.includes('stress') || message.includes('🌻')) {
+                    response = "Outside of work, Lee volunteers at The Museum at Warm Springs, documenting Indigenous cultural preservation through photography. His volunteer work helps him manage stress and includes:\n\n- Documenting cultural initiatives since 2019\n- 50+ photographs featured in museum archives\n- Contributing to heritage preservation through visual storytelling\n- Featured photographer in museum publications\n\nLee finds photography therapeutic and a way to connect with community.";
                 } else if (message.includes('skill') || message.includes('expert')) {
                     response = "Lee specializes in CGI Strata, CACS C360, SQL, AUTOSYS, and Agile methodologies. He's a certified expert in advanced rule design with skills in team mentoring, performance coaching, and career development.";
                 } else if (message.includes('help') || message.includes('support')) {
                     response = "I can tell you about Lee's experience, skills, volunteer work, or contact information. Try asking about his leadership experience, professional background, or core impact!";
                 } else {
-                    response = "That's interesting! I'm still learning, but I can tell you about Lee's professional background and skills. Try asking about his leadership experience or core impact!";
+                    response = "That's interesting! I'm still learning, but I can tell you about Lee's professional background and skills. Try asking about his leadership experience or volunteer photography work!";
                 }
                 
                 addMessage(response, 'bot');
