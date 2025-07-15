@@ -1130,6 +1130,16 @@
                 margin-bottom: 20px;
             }
         }
+        
+        /* Updated title styling */
+        .title-highlight {
+            display: inline-block;
+            background: linear-gradient(to right, #ffc107, #ff9800);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -1137,7 +1147,8 @@
         <header class="header">
             <div class="header-content">
                 <h1 class="name">LEE EDWARD KAO</h1>
-                <p class="title">Senior Product Manager | Strata Decisioning Expert</p>
+                <!-- Updated title -->
+                <p class="title">Senior Product Manager | <span class="title-highlight">Enterprise Decisioning & Product Leadership</span></p>
                 <div class="availability">
                     Available for Full-Time Roles or Consulting Opportunities
                 </div>
@@ -1168,7 +1179,7 @@
                     </div>
                     <div class="impact-card">
                         <div class="impact-number">0%</div>
-                        <div class="impact-text">Vendor dependency eliminated through Strata expertise, enabling full ownership of decision engine</div>
+                        <div class="impact-text">Vendor dependency eliminated through expertise, enabling full ownership of decision engines</div>
                     </div>
                     <div class="impact-card">
                         <div class="impact-number">100%</div>
@@ -1176,7 +1187,7 @@
                     </div>
                     <div class="impact-card">
                         <div class="impact-number">$1.5M</div>
-                        <div class="impact-text">Annual savings achieved by modernizing Strata from vendor-dependent tool to fully owned enterprise engine</div>
+                        <div class="impact-text">Annual savings achieved by modernizing decision platforms</div>
                     </div>
                 </div>
             </section>
@@ -1187,19 +1198,19 @@
                 <div class="experience-item">
                     <div class="job-header">
                         <div>
-                            <div class="job-title">Technical Product Owner - CGI Strata</div>
+                            <div class="job-title">Technical Product Owner - Decisioning Systems</div>
                             <div class="company">U.S. Bank (Former Role)</div>
                         </div>
                         <div class="duration">2015 - 2025</div>
                     </div>
                     <div class="job-description">
-                        Full ownership of CGI Strata Decisioning Platform | Business Logic SME | Enterprise Rule Engine Design
+                        Full ownership of Decisioning Platforms | Business Logic SME | Enterprise Rule Engine Design
                     </div>
                     <ul class="achievements">
                         <li>Architected <span class="highlight">1,000+ Card Recovery Collections business rules</span> for ICS and TSYS covering Pre-Charge-offs, Charge-offs, and Re-Decision processes</li>
                         <li>Designed comprehensive rules for <span class="highlight">Realtime-Settlement Collections</span> operations</li>
                         <li>Achieved <span class="highlight">100% success rate</span> for batch jobs using AUTOSYS</li>
-                        <li>Documented 1,000+ manual workflows that informed Strata's automation rules and workflow logic</li>
+                        <li>Documented 1,000+ manual workflows that informed automation rules and workflow logic</li>
                         <li>Collaborated with Business Line Management, Research and Data Analysts, and developers to translate business needs into technical requirements</li>
                         <li>Reduced false positives by <span class="highlight">35%</span> through advanced rule optimization</li>
                         <li>Eliminated <span class="highlight">$1.5M annually</span> in vendor costs through platform modernization</li>
@@ -1290,18 +1301,18 @@
                 <!-- Technical Product Owner Role -->
                 <div class="job-description-card">
                     <div class="job-desc-header">
-                        <div class="job-desc-title">Technical Product Owner - CGI Strata Decisioning Engine</div>
+                        <div class="job-desc-title">Technical Product Owner - Decisioning Systems</div>
                     </div>
                     <div class="job-desc-content">
                         <div class="job-desc-summary">
-                            Owned and managed the CGI Strata Decisioning Platform as Product Owner, aligning technical capabilities with enterprise goals and market needs.
+                            Owned and managed decisioning platforms as Product Owner, aligning technical capabilities with enterprise goals and market needs.
                         </div>
                         <ul class="job-desc-list">
-                            <li>Owned product vision and roadmap for Strata decisioning platform <span class="ownership-badge">Product Owner</span></li>
+                            <li>Owned product vision and roadmap for decisioning platforms <span class="ownership-badge">Product Owner</span></li>
                             <li>Aligned strategic vision with stakeholders to shape outcome-based roadmaps</li>
                             <li>Drove product development with ownership of backlog management</li>
                             <li>Managed product performance goals including outcomes and customer experience</li>
-                            <li>Owned all engagement for Strata portfolio throughout SDLC</li>
+                            <li>Owned all engagement for decisioning portfolio throughout SDLC</li>
                         </ul>
                     </div>
                 </div>
@@ -1615,17 +1626,17 @@
                            lowerMessage.includes('👔')) {
                     response = "Lee has extensive leadership experience:\n\n- As a Technical Product Manager at U.S. Bank, he led cross-functional teams and drove product vision\n- Served as Collections Supervisor & Compliance Mentor (2010-2015)\n- Supervised 15+ collections specialists with 85% promotion rate\n- Developed training programs and maintained 100% compliance audit pass rate\n- Reduced customer complaints by 35% through empathy-focused training\n- Known for creative problem-solving and removing vendor dependencies";
                 } else if (lowerMessage.includes('professional role') || lowerMessage.includes('position')) {
-                    response = "Lee's primary role was as a Technical Product Owner for CGI Strata at U.S. Bank (2015-2025). He owned the Strata Decisioning Platform, architected 1,000+ business rules, and achieved $1.5M in annual savings through platform modernization.";
+                    response = "Lee's primary role was as a Technical Product Owner for decisioning systems at U.S. Bank (2015-2025). He owned decisioning platforms, architected 1,000+ business rules, and achieved $1.5M in annual savings through platform modernization.";
                 } else if (lowerMessage.includes('experience') || lowerMessage.includes('background')) {
-                    response = "Lee has over 10 years of experience with CGI Strata decisioning platforms. He's designed over 1,000 production rules for financial systems! Key roles include Technical Product Owner for CGI Strata and Collections Supervisor & Compliance Mentor.";
+                    response = "Lee has over 10 years of experience with decisioning platforms. He's designed over 1,000 production rules for financial systems! Key roles include Technical Product Owner for decisioning systems and Collections Supervisor & Compliance Mentor.";
                 } else if (lowerMessage.includes('core impact') || lowerMessage.includes('achievement')) {
-                    response = "Lee's core impact includes: \n- Designed 1,000+ production rules in CGI Strata \n- Maintained 100% SLA compliance for 10+ years \n- Achieved $1.5M annual savings through platform modernization \n- Reduced false positives by 35% through rule optimization";
+                    response = "Lee's core impact includes: \n- Designed 1,000+ production rules in decisioning systems \n- Maintained 100% SLA compliance for 10+ years \n- Achieved $1.5M annual savings through platform modernization \n- Reduced false positives by 35% through rule optimization";
                 } else if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('phone') || lowerMessage.includes('reach')) {
                     response = "You can reach Lee at lee.edward.kao@outlook.com or call him at 503.915.6993. He's based in Vancouver, WA and available for full-time roles or consulting opportunities.";
                 } else if (lowerMessage.includes('volunteer') || lowerMessage.includes('museum') || lowerMessage.includes('beside work') || lowerMessage.includes('photography') || lowerMessage.includes('stress') || lowerMessage.includes('🌻')) {
                     response = "Outside of work, Lee volunteers at The Museum at Warm Springs, documenting Indigenous cultural preservation through photography. His volunteer work helps him manage stress and includes:\n\n- Documenting cultural initiatives since 2019\n- 50+ photographs featured in museum archives\n- Contributing to heritage preservation through visual storytelling\n- Featured photographer in museum publications\n\nLee finds photography therapeutic and a way to connect with community.";
                 } else if (lowerMessage.includes('skill') || lowerMessage.includes('expert')) {
-                    response = "Lee specializes in CGI Strata, CACS C360, SQL, AUTOSYS, and Agile methodologies. He's a certified expert in advanced rule design with skills in team mentoring, performance coaching, and career development.";
+                    response = "Lee specializes in decisioning platforms, SQL, AUTOSYS, and Agile methodologies. He's a certified expert in advanced rule design with skills in team mentoring, performance coaching, and career development.";
                 } else if (lowerMessage.includes('help') || lowerMessage.includes('support')) {
                     response = "I can tell you about Lee's experience, skills, volunteer work, or contact information. Try asking about his leadership experience, professional background, or core impact!";
                 } else {
