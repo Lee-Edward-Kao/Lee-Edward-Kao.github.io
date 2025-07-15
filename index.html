@@ -1334,16 +1334,16 @@
                     </div>
                     <p>I can tell you about Lee's experience, skills, or volunteer work. Here are some sample questions you can ask:</p>
                     <div class="sample-questions">
-                        <div class="question-chip" data-question="Summarize Lee's leadership experience">
-                            <i>👔</i> Summarize Lee's leadership experience
+                        <div class="question-chip" data-question="leadership">
+                            <i>👔</i> Lee's leadership background
                         </div>
-                        <div class="question-chip" data-question="What was Lee's core impact">
+                        <div class="question-chip" data-question="impact">
                             <i>🚀</i> What was Lee's core impact?
                         </div>
-                        <div class="question-chip" data-question="What does Lee do beside work">
+                        <div class="question-chip" data-question="volunteer">
                             <i>🌻</i> What does Lee do beside work?
                         </div>
-                        <div class="question-chip" data-question="How can I reach Lee">
+                        <div class="question-chip" data-question="contact">
                             <i>📞</i> How can I reach Lee?
                         </div>
                     </div>
@@ -1354,14 +1354,39 @@
                 const questionChips = greeting.querySelectorAll('.question-chip');
                 questionChips.forEach(chip => {
                     chip.addEventListener('click', function() {
-                        const question = this.getAttribute('data-question');
-                        userInput.value = question;
-                        sendMessage();
+                        const questionType = this.getAttribute('data-question');
+                        handleQuestionType(questionType);
                     });
                 });
                 
                 // Scroll to bottom
                 chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Handle different question types directly
+            function handleQuestionType(questionType) {
+                let response = '';
+                
+                switch(questionType) {
+                    case 'leadership':
+                        response = "Lee has extensive leadership experience:\n\n- As a Technical Product Manager at U.S. Bank, he led cross-functional teams and drove product vision\n- Served as Collections Supervisor & Compliance Mentor (2010-2015)\n- Supervised 15+ collections specialists with 85% promotion rate\n- Developed training programs and maintained 100% compliance audit pass rate\n- Reduced customer complaints by 35% through empathy-focused training\n- Known for creative problem-solving and removing vendor dependencies";
+                        break;
+                    case 'impact':
+                        response = "Lee's core impact includes: \n- Designed 1,000+ production rules in CGI Strata \n- Maintained 100% SLA compliance for 10+ years \n- Achieved $1.5M annual savings through platform modernization \n- Reduced false positives by 35% through rule optimization";
+                        break;
+                    case 'volunteer':
+                        response = "Outside of work, Lee volunteers at The Museum at Warm Springs, documenting Indigenous cultural preservation through photography. His volunteer work helps him manage stress and includes:\n\n- Documenting cultural initiatives since 2019\n- 50+ photographs featured in museum archives\n- Contributing to heritage preservation through visual storytelling\n- Featured photographer in museum publications\n\nLee finds photography therapeutic and a way to connect with community.";
+                        break;
+                    case 'contact':
+                        response = "You can reach Lee at lee.edward.kao@outlook.com or call him at 503.915.6993. He's based in Vancouver, WA and available for full-time roles or consulting opportunities.";
+                        break;
+                    default:
+                        response = "That's interesting! I can tell you about Lee's professional background and skills. Try asking about his leadership experience or volunteer photography work!";
+                }
+                
+                // Clear chat and show response
+                chatMessages.innerHTML = '';
+                addMessage(response, 'bot');
             }
             
             // Send message function
@@ -1418,26 +1443,30 @@
             
             // Bot responses
             function respondToMessage(message) {
-                message = message.toLowerCase();
+                const lowerMessage = message.toLowerCase();
                 let response = '';
                 
-                if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+                if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
                     response = "Hello there! 😊 How can I help you today?";
-                } else if (message.includes('leadership') || message.includes('supervisor') || message.includes('mentor') || message.includes('👔')) {
+                } else if (lowerMessage.includes('leadership') || 
+                           lowerMessage.includes('leader') || 
+                           lowerMessage.includes('supervisor') || 
+                           lowerMessage.includes('mentor') || 
+                           lowerMessage.includes('👔')) {
                     response = "Lee has extensive leadership experience:\n\n- As a Technical Product Manager at U.S. Bank, he led cross-functional teams and drove product vision\n- Served as Collections Supervisor & Compliance Mentor (2010-2015)\n- Supervised 15+ collections specialists with 85% promotion rate\n- Developed training programs and maintained 100% compliance audit pass rate\n- Reduced customer complaints by 35% through empathy-focused training\n- Known for creative problem-solving and removing vendor dependencies";
-                } else if (message.includes('professional role') || message.includes('position')) {
+                } else if (lowerMessage.includes('professional role') || lowerMessage.includes('position')) {
                     response = "Lee's primary role was as a Technical Product Owner for CGI Strata at U.S. Bank (2015-2025). He owned the Strata Decisioning Platform, architected 1,000+ business rules, and achieved $1.5M in annual savings through platform modernization.";
-                } else if (message.includes('experience') || message.includes('background')) {
+                } else if (lowerMessage.includes('experience') || lowerMessage.includes('background')) {
                     response = "Lee has over 10 years of experience with CGI Strata decisioning platforms. He's designed over 1,000 production rules for financial systems! Key roles include Technical Product Owner for CGI Strata and Collections Supervisor & Compliance Mentor.";
-                } else if (message.includes('core impact') || message.includes('achievement')) {
+                } else if (lowerMessage.includes('core impact') || lowerMessage.includes('achievement')) {
                     response = "Lee's core impact includes: \n- Designed 1,000+ production rules in CGI Strata \n- Maintained 100% SLA compliance for 10+ years \n- Achieved $1.5M annual savings through platform modernization \n- Reduced false positives by 35% through rule optimization";
-                } else if (message.includes('contact') || message.includes('email') || message.includes('phone') || message.includes('reach')) {
+                } else if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('phone') || lowerMessage.includes('reach')) {
                     response = "You can reach Lee at lee.edward.kao@outlook.com or call him at 503.915.6993. He's based in Vancouver, WA and available for full-time roles or consulting opportunities.";
-                } else if (message.includes('volunteer') || message.includes('museum') || message.includes('beside work') || message.includes('photography') || message.includes('stress') || message.includes('🌻')) {
+                } else if (lowerMessage.includes('volunteer') || lowerMessage.includes('museum') || lowerMessage.includes('beside work') || lowerMessage.includes('photography') || lowerMessage.includes('stress') || lowerMessage.includes('🌻')) {
                     response = "Outside of work, Lee volunteers at The Museum at Warm Springs, documenting Indigenous cultural preservation through photography. His volunteer work helps him manage stress and includes:\n\n- Documenting cultural initiatives since 2019\n- 50+ photographs featured in museum archives\n- Contributing to heritage preservation through visual storytelling\n- Featured photographer in museum publications\n\nLee finds photography therapeutic and a way to connect with community.";
-                } else if (message.includes('skill') || message.includes('expert')) {
+                } else if (lowerMessage.includes('skill') || lowerMessage.includes('expert')) {
                     response = "Lee specializes in CGI Strata, CACS C360, SQL, AUTOSYS, and Agile methodologies. He's a certified expert in advanced rule design with skills in team mentoring, performance coaching, and career development.";
-                } else if (message.includes('help') || message.includes('support')) {
+                } else if (lowerMessage.includes('help') || lowerMessage.includes('support')) {
                     response = "I can tell you about Lee's experience, skills, volunteer work, or contact information. Try asking about his leadership experience, professional background, or core impact!";
                 } else {
                     response = "That's interesting! I'm still learning, but I can tell you about Lee's professional background and skills. Try asking about his leadership experience or volunteer photography work!";
