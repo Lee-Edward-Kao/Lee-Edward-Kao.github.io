@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lee Edward Kao - Senior Product Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -1255,7 +1256,7 @@
                     </div>
                     <div class="skill-category">
                         <h4>Tools & Technologies</h4>
-                        <p>SQL, WinSCP/PuTTY<br>AUTOSYS, JIRA, Python</p>
+                        <p>SQL, WinSCP/PuTTY<br>CA Workload Automation AutoSys, JIRA, Python, ServiceNow</p>
                     </div>
                     <div class="skill-category">
                         <h4>Methodologies</h4>
@@ -1407,6 +1408,12 @@
                 const sampleQuestions = document.createElement('div');
                 sampleQuestions.className = 'sample-questions';
                 sampleQuestions.innerHTML = `
+                    <div class="question-chip" data-question="experience">
+                        <i>💼</i> Lee's Professional Experience
+                    </div>
+                    <div class="question-chip" data-question="tech_skills">
+                        <i>🔧</i> Lee's Technical Skills
+                    </div>
                     <div class="question-chip" data-question="leadership">
                         <i>👔</i> Lee's leadership background
                     </div>
@@ -1443,6 +1450,12 @@
                 let response = '';
                 
                 switch(questionType) {
+                    case 'experience':
+                        response = "Lee has over 10 years of professional experience in financial technology:\n\n- Technical Product Owner at U.S. Bank (2015-2025):\n  • Owned decisioning platforms and architected 1,000+ business rules\n  • Designed rules for Card Recovery Collections and Realtime-Settlement\n  • Achieved 100% SLA compliance for critical payment systems\n\n- Collections Supervisor & Compliance Mentor (2010-2015):\n  • Led teams of 15+ collections specialists\n  • Maintained 100% compliance audit pass rate\n  • Reduced customer complaints by 35%";
+                        break;
+                    case 'tech_skills':
+                        response = "Lee's technical expertise includes:\n\n- Decisioning Platforms: CGI Strata, CACS C360\n- Tools & Technologies: SQL, WinSCP/PuTTY, CA Workload Automation AutoSys, JIRA, Python, ServiceNow\n- Methodologies: Agile Scrum, Product Ownership, Enterprise Architecture\n- Leadership: Team Mentoring, Performance Coaching, Compliance Training";
+                        break;
                     case 'leadership':
                         response = "Lee has extensive leadership experience:\n\n- As a Technical Product Manager at U.S. Bank, he led cross-functional teams and drove product vision\n- Served as Collections Supervisor & Compliance Mentor (2010-2015)\n- Supervised 15+ collections specialists with 85% promotion rate\n- Developed training programs and maintained 100% compliance audit pass rate\n- Reduced customer complaints by 35% through empathy-focused training\n- Known for creative problem-solving and removing vendor dependencies";
                         break;
@@ -1456,7 +1469,7 @@
                         response = "You can reach Lee at lee.edward.kao@outlook.com or call him at 503.915.6993. He's based in Vancouver, WA and available for full-time roles or consulting opportunities.";
                         break;
                     default:
-                        response = "That's interesting! I can tell you about Lee's professional background and skills. Try asking about his leadership experience or volunteer photography work!";
+                        response = "That's interesting! I can tell you about Lee's professional background and skills. Try asking about his experience or technical skills!";
                 }
                 
                 // Show the response
@@ -1546,7 +1559,7 @@
                 } else if (lowerMessage.includes('help') || lowerMessage.includes('support')) {
                     response = "I can tell you about Lee's experience, skills, volunteer work, or contact information. Try asking about his leadership experience, professional background, or core impact!";
                 } else {
-                    response = "That's interesting! I'm still learning, but I can tell you about Lee's professional background and skills. Try asking about his leadership experience or volunteer photography work!";
+                    response = "That's interesting! I'm still learning, but I can tell you about Lee's professional background and skills. Try asking about his experience or technical skills!";
                 }
                 
                 addMessage(response, 'bot');
