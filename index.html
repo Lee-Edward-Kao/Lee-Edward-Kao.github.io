@@ -392,10 +392,12 @@
         }
 
         @media print {
-            body { background: white; padding: 0; }
-            .container { box-shadow: none; border-radius: 0; }
-            .print-btn { display: none; }
-            .header::before { display: none; }
+            body { background: white !important; padding: 0 !important; }
+            .container { box-shadow: none !important; border-radius: 0 !important; }
+            .print-btn, .chatbot-container, .print-modal, .sunflower-assistant {
+                display: none !important;
+            }
+            .header::before { display: none !important; }
         }
 
         /* Job Description Styles */
@@ -1076,6 +1078,29 @@
         </header>
 
         <main class="main-content">
+            <!-- TECHNICAL SKILLS MOVED TO TOP -->
+            <section class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Decisioning Platforms</h4>
+                        <p>CGI Strata<br>CACS C360</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Tools & Technologies</h4>
+                        <p>SQL, WinSCP/PuTTY<br>CA Workload Automation AutoSys, JIRA, Python, ServiceNow</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Methodologies</h4>
+                        <p>Agile Scrum<br>Product Ownership<br>Enterprise Architecture</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Leadership & Development</h4>
+                        <p>Team Mentoring<br>Performance Coaching<br>Compliance Training<br>Career Development</p>
+                    </div>
+                </div>
+            </section>
+
             <section class="section">
                 <h2 class="section-title">Core Impact</h2>
                 <div class="impact-grid">
@@ -1243,28 +1268,6 @@
                             <div class="job-desc-subtitle">Leadership Impact</div>
                             <p>85% of team members received promotions under my supervision, and compliance audits maintained 100% pass rate for 5 consecutive years.</p>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Decisioning Platforms</h4>
-                        <p>CGI Strata<br>CACS C360</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Tools & Technologies</h4>
-                        <p>SQL, WinSCP/PuTTY<br>CA Workload Automation AutoSys, JIRA, Python, ServiceNow</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Methodologies</h4>
-                        <p>Agile Scrum<br>Product Ownership<br>Enterprise Architecture</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Leadership & Development</h4>
-                        <p>Team Mentoring<br>Performance Coaching<br>Compliance Training<br>Career Development</p>
                     </div>
                 </div>
             </section>
