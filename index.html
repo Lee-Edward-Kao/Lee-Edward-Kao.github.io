@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lee Edward Kao - Senior Product Manager</title>
+    <title>Lee Edward Kao - Professional Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -15,8 +15,8 @@
 
         body {
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #3E2723;
+            background: #F5F5F1;
             min-height: 100vh;
             padding: 20px;
             overflow-x: hidden;
@@ -27,12 +27,13 @@
             max-width: 900px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             overflow: hidden;
             animation: fadeIn 1s ease-out;
             position: relative;
             z-index: 10;
+            border: 1px solid #D7CCC8;
         }
 
         @keyframes fadeIn {
@@ -41,9 +42,9 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            padding: 40px;
+            background: #556B2F;
+            color: #3E2723;
+            padding: 35px 40px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -52,17 +53,13 @@
         .header::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 C30,0 0,30 0,50 C0,70 30,100 50,100 C70,100 100,70 100,50 C100,30 70,0 50,0 Z" fill="rgba(0,0,0,0.1)"/></svg>');
+            background-size: cover;
+            opacity: 0.2;
         }
 
         .header-content {
@@ -71,34 +68,29 @@
         }
 
         .name {
-            font-size: 2.5em;
+            font-size: 2.3em;
             font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .title {
-            font-size: 1.3em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            opacity: 0.9;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            color: #FFF8E1;
         }
 
         .availability {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 15px;
+            background: rgba(62, 39, 35, 0.2);
+            padding: 8px 20px;
             border-radius: 25px;
             margin: 10px 0;
             font-size: 0.95em;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(62, 39, 35, 0.3);
+            color: #FFF8E1;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
             font-size: 0.95em;
             margin-top: 15px;
         }
@@ -106,136 +98,160 @@
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 5px;
-            background: rgba(255,255,255,0.1);
-            padding: 8px 15px;
+            gap: 8px;
+            background: rgba(62, 39, 35, 0.15);
+            padding: 8px 18px;
             border-radius: 25px;
             backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            color: #FFF8E1;
         }
 
         .contact-item:hover {
             transform: translateY(-2px);
-            background: rgba(255,255,255,0.2);
+            background: rgba(62, 39, 35, 0.25);
         }
 
         .contact-link {
-            color: white;
+            color: #FFF8E1;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .contact-link:hover {
-            text-shadow: 0 0 10px rgba(255,255,255,0.8);
-            transform: scale(1.05);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
         }
 
         .main-content {
-            padding: 40px;
+            padding: 30px;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #E0E0E0;
+            padding-bottom: 20px;
+        }
+
+        .section:last-child {
+            border-bottom: none;
         }
 
         .section-title {
-            font-size: 1.8em;
+            font-size: 1.6em;
             font-weight: 600;
-            color: #2c3e50;
+            color: #556B2F;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #3498db;
             position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -3px;
+            bottom: 0;
             left: 0;
             width: 50px;
             height: 3px;
-            background: #e74c3c;
+            background: #8C9E6B;
             border-radius: 2px;
+        }
+
+        .section-title .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            color: #556B2F;
+        }
+
+        .section-title.collapsed .toggle-icon {
+            transform: rotate(0deg);
+        }
+
+        .section-title:not(.collapsed) .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .section-content {
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+        }
+
+        .section-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .section-content.expanded {
+            max-height: 2000px;
+            opacity: 1;
         }
 
         .impact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
         .impact-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 5px solid #3498db;
+            background: #F9F9F5;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #8C9E6B;
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-        }
-
-        .impact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(155, 89, 182, 0.05) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
         }
 
         .impact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .impact-card:hover::before {
-            opacity: 1;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
 
         .impact-number {
-            font-size: 2em;
+            font-size: 1.8em;
             font-weight: 700;
-            color: #e74c3c;
-            margin-bottom: 10px;
+            color: #556B2F;
+            margin-bottom: 8px;
         }
 
         .impact-text {
             font-size: 0.95em;
-            color: #555;
+            color: #4E342E;
             line-height: 1.5;
         }
 
         .experience-item {
-            margin-bottom: 35px;
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 15px;
-            border-left: 5px solid #2c3e50;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #F9F9F5;
+            border-radius: 12px;
+            border-left: 4px solid #8C9E6B;
             transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
         }
 
         .experience-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
 
         .volunteer-item {
-            margin-bottom: 35px;
-            padding: 25px;
-            background: linear-gradient(135deg, #f0f7ff 0%, #e1f5fe 100%);
-            border-radius: 15px;
-            border-left: 5px solid #4CAF50;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #F9F9F5;
+            border-radius: 12px;
+            border-left: 4px solid #8C9E6B;
             transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
         }
 
         .volunteer-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
 
         .job-header {
@@ -248,28 +264,28 @@
         }
 
         .job-title {
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: 600;
-            color: #2c3e50;
+            color: #3E2723;
         }
 
         .company {
             font-size: 1.1em;
-            color: #3498db;
+            color: #556B2F;
             font-weight: 500;
         }
 
         .duration {
             font-size: 0.9em;
-            color: #666;
-            background: #e9ecef;
+            color: #5D4037;
+            background: #E8E5E0;
             padding: 5px 12px;
             border-radius: 20px;
         }
 
         .job-description {
             margin-bottom: 15px;
-            color: #555;
+            color: #5D4037;
             font-style: italic;
         }
 
@@ -277,9 +293,9 @@
             font-style: italic;
             margin: 15px 0;
             padding: 15px;
-            background: rgba(76, 175, 80, 0.05);
+            background: rgba(139, 158, 107, 0.08);
             border-radius: 10px;
-            border-left: 3px solid #4CAF50;
+            border-left: 3px solid #8C9E6B;
         }
 
         .achievements {
@@ -290,42 +306,46 @@
             margin-bottom: 10px;
             padding-left: 25px;
             position: relative;
-            color: #444;
+            color: #4E342E;
         }
 
         .achievements li::before {
-            content: '▶';
+            content: '•';
             position: absolute;
-            left: 0;
-            color: #3498db;
+            left: 10px;
+            color: #556B2F;
             font-weight: bold;
+            font-size: 1.2em;
         }
 
         .highlight {
-            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            background: rgba(139, 158, 107, 0.15);
             padding: 2px 6px;
             border-radius: 4px;
             font-weight: 600;
-            color: #2c3e50;
+            color: #3E2723;
         }
 
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            gap: 15px;
         }
 
         .skill-category {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
+            background: #8C9E6B;
+            color: #FFF8E1;
+            padding: 18px;
+            border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
         }
 
         .skill-category:hover {
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            background: #7D8D5F;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .skill-category h4 {
@@ -339,46 +359,58 @@
         }
 
         .education {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
+            background: #F9F9F5;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
         }
 
         .education h4 {
-            color: #d35400;
-            margin-bottom: 10px;
+            color: #556B2F;
+            margin-bottom: 8px;
         }
-
+        
+        /* Collapsible section styling */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
         @media (max-width: 768px) {
             body { padding: 10px; }
-            .header { padding: 30px 20px; }
-            .name { font-size: 2em; }
-            .main-content { padding: 30px 20px; }
+            .header { padding: 25px 15px; }
+            .name { font-size: 1.8em; }
+            .main-content { padding: 20px; }
             .contact-info { flex-direction: column; align-items: center; }
             .job-header { flex-direction: column; align-items: flex-start; }
             
-            /* Mobile print button fix */
             .print-btn {
-                bottom: 100px;
-                right: 20px;
+                bottom: 90px;
+                right: 15px;
                 padding: 12px 15px;
                 font-size: 14px;
+            }
+            
+            .impact-grid, .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
 
         .print-btn {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            bottom: 25px;
+            right: 25px;
+            background: #556B2F;
+            color: #FFF8E1;
             border: none;
-            padding: 15px 20px;
+            padding: 14px 18px;
             border-radius: 50px;
             cursor: pointer;
             font-size: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
             z-index: 1000;
             display: flex;
@@ -388,422 +420,26 @@
 
         .print-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            background: #475C2A;
         }
 
         @media print {
             body { background: white !important; padding: 0 !important; }
             .container { box-shadow: none !important; border-radius: 0 !important; }
-            .print-btn, .chatbot-container, .print-modal, .sunflower-assistant {
+            .print-btn, .chatbot-container {
                 display: none !important;
             }
             .header::before { display: none !important; }
-        }
-
-        /* Job Description Styles */
-        .job-description-card {
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, #f1f8ff 0%, #e3f2fd 100%);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .job-description-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        
-        .job-desc-header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .job-desc-title {
-            font-size: 1.2em;
-            font-weight: 500;
-        }
-        
-        .job-desc-content {
-            padding: 20px;
-        }
-        
-        .job-desc-summary {
-            font-style: italic;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #3498db;
-            color: #2c3e50;
-        }
-        
-        .job-desc-list {
-            list-style-type: none;
-        }
-        
-        .job-desc-list li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .job-desc-list li:before {
-            content: '•';
-            position: absolute;
-            left: 10px;
-            color: #3498db;
-            font-weight: bold;
-        }
-        
-        .job-desc-qualifications {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(52, 152, 219, 0.05);
-            border-radius: 10px;
-            border-left: 3px solid #3498db;
-        }
-        
-        .job-desc-subtitle {
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #3498db;
-        }
-        
-        .ownership-badge {
-            display: inline-block;
-            background: #e74c3c;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.8em;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-        
-        .newsletter-link {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 8px 15px;
-            background: #4CAF50;
-            color: white;
-            border-radius: 20px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .newsletter-link:hover {
-            background: #388E3C;
-            transform: translateY(-2px);
-        }
-        
-        .newsletter-link svg {
-            vertical-align: middle;
-            margin-right: 5px;
-        }
-
-        /* Mentor Badge */
-        .mentor-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
-            color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.8em;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-
-        /* Leadership Section */
-        .leadership-highlight {
-            background: linear-gradient(120deg, #fff9c4 0%, #ffecb3 100%);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            border-left: 4px solid #ff9800;
-        }
-
-        .leadership-highlight p {
-            margin-bottom: 10px;
-        }
-
-        .leadership-stats {
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .stat-item {
-            padding: 10px;
-        }
-
-        .stat-number {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #e74c3c;
-        }
-
-        .stat-label {
-            font-size: 0.9em;
-            color: #555;
-        }
-
-        /* CHATBOT STYLES - Bottom Left with Purple Background */
-        .chatbot-container {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 2000;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        
-        .chatbot-prompt {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 25px;
-            margin-bottom: 10px;
-            font-size: 14px;
-            opacity: 0.9;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            animation: pulse 2s infinite;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .chatbot-prompt:hover {
-            opacity: 1;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
-            transform: translateY(-3px);
-        }
-        
-        @keyframes pulse {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0); }
-        }
-        
-        .chat-window {
-            width: 320px;
-            height: 420px;
-            background: white;
-            border-radius: 25px 25px 25px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            display: none;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.4s ease;
-        }
-        
-        .chatbot-container.active .chat-window {
-            display: block;
-            animation: chatAppear 0.5s forwards;
-        }
-        
-        @keyframes chatAppear {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .section-content {
+                display: block !important;
+                max-height: none !important;
+                opacity: 1 !important;
             }
         }
-        
-        .chat-header {
-            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.1em;
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .chat-messages {
-            height: 320px;
-            padding: 15px;
-            overflow-y: auto;
-            background: #f9f9f9;
-            scrollbar-width: thin;
-            scrollbar-color: #ffc107 #f0f0f0;
-        }
-        
-        .chat-messages::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .chat-messages::-webkit-scrollbar-thumb {
-            background-color: #ffc107;
-            border-radius: 3px;
-        }
-        
-        .message {
-            margin-bottom: 15px;
-            padding: 10px 15px;
-            border-radius: 18px;
-            max-width: 80%;
-            animation: messageAppear 0.3s ease-out;
-            position: relative;
-        }
-        
-        @keyframes messageAppear {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .bot-message {
-            background: #e3f2fd;
-            border-bottom-left-radius: 5px;
-            align-self: flex-start;
-        }
-        
-        .user-message {
-            background: #d1ecf1;
-            border-bottom-right-radius: 5px;
-            margin-left: auto;
-        }
-        
-        .chat-input {
-            display: flex;
-            padding: 15px;
-            background: white;
-            border-top: 1px solid #eee;
-        }
-        
-        .chat-input input {
-            flex: 1;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 25px;
-            outline: none;
-            transition: all 0.3s;
-            font-size: 14px;
-        }
-        
-        .chat-input input:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-        }
-        
-        .chat-input button {
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            padding: 10px 20px;
-            margin-left: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-        
-        .chat-input button:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-        }
-        
-        .smiley-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
-            border: none;
-            color: white;
-            font-size: 36px;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        .smiley-btn:hover {
-            transform: scale(1.1) rotate(10deg);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .typing-indicator {
-            display: inline-flex;
-            align-items: center;
-            background: #e3f2fd;
-            padding: 8px 15px;
-            border-radius: 18px;
-        }
-        
-        .typing-dot {
-            width: 8px;
-            height: 8px;
-            background: #3498db;
-            border-radius: 50%;
-            margin: 0 3px;
-            animation: typing 1.4s infinite;
-        }
-        
-        .typing-dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        
-        .typing-dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-        
-        @keyframes typing {
-            0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-5px); }
-        }
-        
-        /* SAMPLE QUESTIONS STYLES */
-        .sample-questions {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .question-chip {
-            background: #f0f7ff;
-            border: 1px solid #3498db;
-            border-radius: 20px;
-            padding: 8px 15px;
-            font-size: 0.9em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-        
-        .question-chip:hover {
-            background: #3498db;
-            color: white;
-            transform: translateX(5px);
-        }
-        
-        .question-chip i {
-            margin-right: 8px;
-            font-size: 0.9em;
-        }
-        
-        /* PRINT MODAL STYLES - Enhanced for Mobile */
+
+        /* PRINT MODAL */
         .print-modal {
             position: fixed;
             top: 0;
@@ -847,28 +483,28 @@
         .print-options h3 {
             text-align: center;
             margin-bottom: 25px;
-            color: #2c3e50;
+            color: #3E2723;
             font-size: 1.8em;
         }
         
         .print-option {
-            background: #f8f9fa;
+            background: #F9F9F5;
             border-radius: 15px;
             padding: 20px;
             margin-bottom: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: 2px solid #e9ecef;
+            border: 2px solid #E8E5E0;
         }
         
         .print-option:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: #3498db;
+            border-color: #8C9E6B;
         }
         
         .print-option h4 {
-            color: #2c3e50;
+            color: #3E2723;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
@@ -876,12 +512,13 @@
         }
         
         .print-option p {
-            color: #555;
+            color: #5D4037;
             font-size: 0.95em;
         }
         
         .print-option .icon {
             font-size: 24px;
+            color: #556B2F;
         }
         
         .close-modal {
@@ -892,7 +529,7 @@
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: #666;
+            color: #5D4037;
             z-index: 10;
         }
         
@@ -910,7 +547,7 @@
                 margin: 0 !important;
             }
             
-            .print-btn, .chatbot-container, .print-modal, .sunflower-assistant {
+            .print-btn, .chatbot-container, .print-modal {
                 display: none !important;
             }
             
@@ -937,8 +574,8 @@
         }
         
         .print-ats .header {
-            background: white !important;
-            color: black !important;
+            background: #f0f0f0 !important;
+            color: #333 !important;
             padding: 10px !important;
             text-align: left !important;
         }
@@ -1064,12 +701,10 @@
         /* Hide non-essential elements in ATS print */
         .print-ats .print-btn,
         .print-ats .chatbot-container,
-        .print-ats .sunflower-assistant,
         .print-ats .header::before,
         .print-ats .impact-card::before,
         .print-ats .smiley-btn,
-        .print-ats .chatbot-prompt,
-        .print-ats .title-highlight {
+        .print-ats .chatbot-prompt {
             display: none !important;
         }
 
@@ -1088,93 +723,254 @@
             /* Print with all backgrounds as is */
         }
         
-        /* SUNFLOWER ASSISTANT STYLES */
-        .sunflower-assistant {
+        /* CHATBOT STYLES */
+        .chatbot-container {
             position: fixed;
-            bottom: 160px;
+            bottom: 30px;
             left: 30px;
             z-index: 2000;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease;
-            pointer-events: none;
         }
-
-        .sunflower-assistant.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .sunflower-icon {
-            font-size: 50px;
-            animation: floatSunflower 3s ease-in-out infinite;
-            z-index: 5;
-        }
-
-        @keyframes floatSunflower {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .welcome-text {
-            background: rgba(255, 255, 255, 0.9);
-            color: #2c3e50;
+        
+        .chatbot-prompt {
+            background: #8C9E6B;
+            color: #FFF8E1;
             padding: 10px 15px;
-            border-radius: 20px;
-            margin-top: 10px;
+            border-radius: 25px;
+            margin-bottom: 10px;
             font-size: 14px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            max-width: 180px;
-            text-align: center;
-            animation: fadeInText 1s ease-out 1.5s forwards;
+            opacity: 0.95;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .chatbot-prompt:hover {
+            opacity: 1;
+            background: #7D8D5F;
+            transform: translateY(-3px);
+        }
+        
+        @keyframes pulse {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+        
+        .chat-window {
+            width: 300px;
+            height: 400px;
+            background: white;
+            border-radius: 20px 20px 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            display: none;
+            transform: translateY(20px);
             opacity: 0;
-        }
-
-        @keyframes fadeInText {
-            to { opacity: 1; }
+            transition: all 0.4s ease;
         }
         
-        /* Mobile-specific enhancements */
-        @media (max-width: 480px) {
-            .print-options {
-                padding: 20px;
-            }
-            
-            .print-option {
-                padding: 15px;
-            }
-            
-            .print-option h4 {
-                font-size: 1.1em;
-            }
-            
-            .print-option p {
-                font-size: 0.85em;
-            }
-            
-            .close-modal {
-                top: 10px;
-                right: 10px;
-                font-size: 20px;
-            }
-            
-            .print-options h3 {
-                font-size: 1.5em;
-                margin-bottom: 20px;
+        .chatbot-container.active .chat-window {
+            display: block;
+            animation: chatAppear 0.5s forwards;
+        }
+        
+        @keyframes chatAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
         
-        /* Updated title styling */
-        .title-highlight {
-            display: inline-block;
-            background: linear-gradient(to right, #ffc107, #ff9800);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        .chat-header {
+            background: #8C9E6B;
+            color: #FFF8E1;
+            padding: 12px;
+            text-align: center;
             font-weight: 600;
+            font-size: 1.1em;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .chat-messages {
+            height: 290px;
+            padding: 15px;
+            overflow-y: auto;
+            background: #F9F9F7;
+            scrollbar-width: thin;
+            scrollbar-color: #8C9E6B #f0f0f0;
+        }
+        
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .chat-messages::-webkit-scrollbar-thumb {
+            background-color: #8C9E6B;
+            border-radius: 3px;
+        }
+        
+        .message {
+            margin-bottom: 12px;
+            padding: 10px 14px;
+            border-radius: 16px;
+            max-width: 80%;
+            animation: messageAppear 0.3s ease-out;
+            position: relative;
+        }
+        
+        @keyframes messageAppear {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .bot-message {
+            background: #E9F0E4;
+            border-bottom-left-radius: 5px;
+            align-self: flex-start;
+        }
+        
+        .user-message {
+            background: #D9E8D0;
+            border-bottom-right-radius: 5px;
+            margin-left: auto;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 12px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s;
+            font-size: 14px;
+            background: #F8F9F5;
+        }
+        
+        .chat-input input:focus {
+            border-color: #8C9E6B;
+            box-shadow: 0 0 0 2px rgba(140, 158, 107, 0.2);
+        }
+        
+        .chat-input button {
+            background: #8C9E6B;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 8px 18px;
+            margin-left: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .chat-input button:hover {
+            background: #7D8D5F;
+            transform: translateY(-2px);
+        }
+        
+        .smiley-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #8C9E6B;
+            border: none;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .smiley-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background: #7D8D5F;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .typing-indicator {
+            display: inline-flex;
+            align-items: center;
+            background: #E9F0E4;
+            padding: 8px 15px;
+            border-radius: 18px;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #8C9E6B;
+            border-radius: 50%;
+            margin: 0 3px;
+            animation: typing 1.4s infinite;
+        }
+        
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        /* SAMPLE QUESTIONS STYLES */
+        .sample-questions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .question-chip {
+            background: #F0F7EB;
+            border: 1px solid #8C9E6B;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .question-chip:hover {
+            background: #8C9E6B;
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .question-chip i {
+            margin-right: 8px;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -1183,7 +979,6 @@
         <header class="header">
             <div class="header-content">
                 <h1 class="name">LEE EDWARD KAO</h1>
-                <p class="title">Senior Product Manager | <span class="title-highlight">Enterprise Decisioning & Product Leadership</span></p>
                 <div class="availability">
                     Available for Full-Time Roles or Consulting Opportunities
                 </div>
@@ -1205,207 +1000,251 @@
         </header>
 
         <main class="main-content">
-            <!-- TECHNICAL SKILLS MOVED TO TOP -->
+            <!-- TECHNICAL SKILLS -->
             <section class="section">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Decisioning Platforms</h4>
-                        <p>CGI Strata<br>CACS C360</p>
+                <h2 class="section-title collapsed" id="technical-skills-title">
+                    <div class="section-header">
+                        <span>Technical Skills</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
                     </div>
-                    <div class="skill-category">
-                        <h4>Tools & Technologies</h4>
-                        <p>SQL, WinSCP/PuTTY<br>CA Workload Automation AutoSys, JIRA, Python, ServiceNow, GitHub Copilot</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Methodologies</h4>
-                        <p>Agile Scrum<br>Product Ownership<br>Enterprise Architecture</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Leadership & Development</h4>
-                        <p>Team Mentoring<br>Performance Coaching<br>Compliance Training<br>Career Development</p>
+                </h2>
+                <div class="section-content collapsed" id="technical-skills-content">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Decisioning Platforms</h4>
+                            <p>CGI Strata<br>CACS C360</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Tools & Technologies</h4>
+                            <p>SQL, WinSCP/PuTTY<br>CA Workload Automation AutoSys, JIRA, Python, ServiceNow, GitHub Copilot</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Methodologies</h4>
+                            <p>Agile Scrum<br>Product Ownership<br>Enterprise Architecture</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Leadership & Development</h4>
+                            <p>Team Mentoring<br>Performance Coaching<br>Compliance Training<br>Career Development</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            <!-- CORE IMPACT -->
             <section class="section">
-                <h2 class="section-title">Core Impact</h2>
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <div class="impact-number">1,000+</div>
-                        <div class="impact-text">Production rules designed in CGI Strata (largest U.S. Bank implementation)</div>
+                <h2 class="section-title collapsed" id="core-impact-title">
+                    <div class="section-header">
+                        <span>Core Impact</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
                     </div>
-                    <div class="impact-card">
-                        <div class="impact-number">0%</div>
-                        <div class="impact-text">Vendor dependency eliminated through expertise, enabling full ownership of decision engines</div>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-number">100%</div>
-                        <div class="impact-text">SLA compliance maintained for 10+ years on critical payment/collections decisions</div>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-number">$1.5M</div>
-                        <div class="impact-text">Annual savings achieved by modernizing decision platforms</div>
+                </h2>
+                <div class="section-content collapsed" id="core-impact-content">
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <div class="impact-number">1,000+</div>
+                            <div class="impact-text">Production rules designed in CGI Strata (largest U.S. Bank implementation)</div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-number">0%</div>
+                            <div class="impact-text">Vendor dependency eliminated through expertise, enabling full ownership of decision engines</div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-number">100%</div>
+                            <div class="impact-text">SLA compliance maintained for 10+ years on critical payment/collections decisions</div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-number">$1.5M</div>
+                            <div class="impact-text">Annual savings achieved by modernizing decision platforms</div>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            <!-- PROFESSIONAL EXPERIENCE -->
             <section class="section">
-                <h2 class="section-title">Professional Experience</h2>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Technical Product Owner - Decisioning Systems</div>
-                            <div class="company">U.S. Bank (Former Role)</div>
+                <h2 class="section-title collapsed" id="experience-title">
+                    <div class="section-header">
+                        <span>Professional Experience</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                </h2>
+                <div class="section-content collapsed" id="experience-content">
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Technical Product Manager / Owner - Decisioning Systems</div>
+                                <div class="company">U.S. Bank (Former Role)</div>
+                            </div>
+                            <div class="duration">2015 - 2025</div>
                         </div>
-                        <div class="duration">2015 - 2025</div>
+                        <div class="job-description">
+                            Full ownership of Decisioning Platforms | Business Logic SME | Enterprise Rule Engine Design
+                        </div>
+                        <ul class="achievements">
+                            <li>Architected <span class="highlight">1,000+ Card Recovery Collections business rules</span> for ICS and TSYS covering Pre-Charge-offs, Charge-offs, and Re-Decision processes</li>
+                            <li>Designed comprehensive rules for <span class="highlight">Realtime-Settlement Collections</span> operations</li>
+                            <li>Achieved <span class="highlight">100% success rate</span> for batch jobs using AUTOSYS</li>
+                            <li>Documented 1,000+ manual workflows that informed automation rules and workflow logic</li>
+                            <li>Collaborated with Business Line Management, Research and Data Analysts, and developers to translate business needs into technical requirements</li>
+                            <li>Reduced false positives by <span class="highlight">35%</span> through advanced rule optimization</li>
+                            <li>Eliminated <span class="highlight">$1.5M annually</span> in vendor costs through platform modernization</li>
+                        </ul>
                     </div>
-                    <div class="job-description">
-                        Full ownership of Decisioning Platforms | Business Logic SME | Enterprise Rule Engine Design
-                    </div>
-                    <ul class="achievements">
-                        <li>Architected <span class="highlight">1,000+ Card Recovery Collections business rules</span> for ICS and TSYS covering Pre-Charge-offs, Charge-offs, and Re-Decision processes</li>
-                        <li>Designed comprehensive rules for <span class="highlight">Realtime-Settlement Collections</span> operations</li>
-                        <li>Achieved <span class="highlight">100% success rate</span> for batch jobs using AUTOSYS</li>
-                        <li>Documented 1,000+ manual workflows that informed automation rules and workflow logic</li>
-                        <li>Collaborated with Business Line Management, Research and Data Analysts, and developers to translate business needs into technical requirements</li>
-                        <li>Reduced false positives by <span class="highlight">35%</span> through advanced rule optimization</li>
-                        <li>Eliminated <span class="highlight">$1.5M annually</span> in vendor costs through platform modernization</li>
-                    </ul>
-                </div>
 
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Collections Supervisor & Compliance Mentor <span class="mentor-badge">Leadership Role</span></div>
-                            <div class="company">U.S. Bank (Former Role)</div>
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Collections Supervisor & Compliance Mentor <span class="mentor-badge">Leadership Role</span></div>
+                                <div class="company">U.S. Bank (Former Role)</div>
+                            </div>
+                            <div class="duration">2010 - 2015</div>
                         </div>
-                        <div class="duration">2010 - 2015</div>
-                    </div>
-                    <div class="job-description">
-                        Led a team of collections specialists with dual focus on regulatory compliance and employee development
-                    </div>
-                    
-                    <div class="leadership-highlight">
-                        <p><strong>Leadership Philosophy:</strong> "Great supervisors build great teams. My approach focused on developing talent through mentorship, constructive feedback, and creating pathways for career advancement."</p>
+                        <div class="job-description">
+                            Led a team of collections specialists with dual focus on regulatory compliance and employee development
+                        </div>
                         
-                        <div class="leadership-stats">
-                            <div class="stat-item">
-                                <div class="stat-number">15+</div>
-                                <div class="stat-label">Team Members</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">85%</div>
-                                <div class="stat-label">Promotion Rate</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">100%</div>
-                                <div class="stat-label">Audit Pass Rate</div>
+                        <div class="leadership-highlight">
+                            <p><strong>Lee's Philosophy on Leadership:</strong> "Great supervisors build great teams. My approach focused on developing talent through mentorship, constructive feedback, and creating pathways for career advancement."</p>
+                            
+                            <div class="leadership-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">15+</div>
+                                    <div class="stat-label">Team Members</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">85%</div>
+                                    <div class="stat-label">Promotion Rate</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">100%</div>
+                                    <div class="stat-label">Audit Pass Rate</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <ul class="achievements">
-                        <li>Mentored and supervised a team of <span class="highlight">15+ collections specialists</span>, providing ongoing coaching and performance feedback</li>
-                        <li>Conducted regular call monitoring and audits to ensure <span class="highlight">FDCPA, UDAAP, and bank policy compliance</span></li>
-                        <li>Developed and delivered comprehensive training programs on collections protocols, customer engagement, and de-escalation techniques</li>
-                        <li>Implemented career development plans that resulted in <span class="highlight">85% of team members</span> receiving promotions to supervisor roles or transitioning to other departments within the bank</li>
-                        <li>Created a peer-mentoring program that improved team performance metrics by <span class="highlight">25%</span> and reduced onboarding time by 40%</li>
-                        <li>Authored and maintained the department's <span class="highlight">Compliance Reference Guide</span>, used by 100+ employees</li>
-                        <li>Reduced customer complaints by <span class="highlight">35%</span> through empathy-focused training and quality assurance</li>
-                    </ul>
-                </div>
-            </section>
-            
-            <section class="section">
-                <h2 class="section-title">Cultural Preservation & Volunteer Work</h2>
-                
-                <div class="volunteer-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Cultural Documentation Volunteer</div>
-                            <div class="company">The Museum at Warm Springs, Oregon</div>
-                        </div>
-                        <div class="duration">Nov 2019 - Present · 5 yrs 9 mos</div>
-                    </div>
-                    
-                    <div class="philosophy">
-                        "Technology should be humanized. My volunteer work documenting Indigenous heritage stems from that same conviction—that systems should serve people, not exclude them."
-                    </div>
-                    
-                    <ul class="achievements">
-                        <li>Documenting cultural preservation initiatives for Oregon's first Indigenous Museum</li>
-                        <li>50+ photographs featured in digital archives reaching 200,000+ annual visitors</li>
-                        <li>Contributing to the preservation of Indigenous heritage through visual storytelling</li>
-                        <li>Featured photographer in museum newsletters and publications</li>
-                    </ul>
-                    
-                    <a href="https://museum.warmsprings-nsn.gov/wp-content/uploads/2025/01/January-2025-News-from-The-Museum-at-Warm-Springs.pdf" 
-                       class="newsletter-link" 
-                       target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                        </svg>
-                        View My Featured Work in Museum Newsletter
-                    </a>
-                </div>
-            </section>
-            
-            <section class="section">
-                <h2 class="section-title">Professional Role Definitions</h2>
-                
-                <!-- Technical Product Owner Role -->
-                <div class="job-description-card">
-                    <div class="job-desc-header">
-                        <div class="job-desc-title">Technical Product Owner - Decisioning Systems</div>
-                    </div>
-                    <div class="job-desc-content">
-                        <div class="job-desc-summary">
-                            Owned and managed decisioning platforms as Product Owner, aligning technical capabilities with enterprise goals and market needs.
-                        </div>
-                        <ul class="job-desc-list">
-                            <li>Owned product vision and roadmap for decisioning platforms <span class="ownership-badge">Product Owner</span></li>
-                            <li>Aligned strategic vision with stakeholders to shape outcome-based roadmaps</li>
-                            <li>Drove product development with ownership of backlog management</li>
-                            <li>Managed product performance goals including outcomes and customer experience</li>
-                            <li>Owned all engagement for decisioning portfolio throughout SDLC</li>
+                        
+                        <ul class="achievements">
+                            <li>Mentored and supervised a team of <span class="highlight">15+ collections specialists</span>, providing ongoing coaching and performance feedback</li>
+                            <li>Conducted regular call monitoring and audits to ensure <span class="highlight">FDCPA, UDAAP, and bank policy compliance</span></li>
+                            <li>Developed and delivered comprehensive training programs on collections protocols, customer engagement, and de-escalation techniques</li>
+                            <li>Implemented career development plans that resulted in <span class="highlight">85% of team members</span> receiving promotions to supervisor roles or transitioning to other departments within the bank</li>
+                            <li>Created a peer-mentoring program that improved team performance metrics by <span class="highlight">25%</span> and reduced onboarding time by 40%</li>
+                            <li>Authored and maintained the department's <span class="highlight">Compliance Reference Guide</span>, used by 100+ employees</li>
+                            <li>Reduced customer complaints by <span class="highlight">35%</span> through empathy-focused training and quality assurance</li>
                         </ul>
                     </div>
                 </div>
-                
-                <!-- Leadership Role Definition -->
-                <div class="job-description-card">
-                    <div class="job-desc-header">
-                        <div class="job-desc-title">Collections Supervisor & Compliance Mentor</div>
+            </section>
+            
+            <!-- VOLUNTEERSHIPS -->
+            <section class="section">
+                <h2 class="section-title collapsed" id="volunteer-title">
+                    <div class="section-header">
+                        <span>Volunteerships</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
                     </div>
-                    <div class="job-desc-content">
-                        <div class="job-desc-summary">
-                            Led high-performing collections teams with focus on compliance excellence and talent development.
+                </h2>
+                <div class="section-content collapsed" id="volunteer-content">
+                    <div class="volunteer-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Cultural Documentation Volunteer</div>
+                                <div class="company">The Museum at Warm Springs, Oregon</div>
+                            </div>
+                            <div class="duration">Nov 2019 - Present · 5 yrs 9 mos</div>
                         </div>
-                        <ul class="job-desc-list">
-                            <li>Supervised and mentored collections specialists to achieve performance targets</li>
-                            <li>Developed training programs covering compliance protocols and customer engagement</li>
-                            <li>Conducted quality assurance audits and provided constructive feedback</li>
-                            <li>Created career development pathways for team members</li>
-                            <li>Implemented de-escalation techniques to preserve customer relationships</li>
+                        
+                        <div class="philosophy">
+                            "Lee believes technology should be humanized. His volunteer work documenting Indigenous heritage stems from that same conviction—that systems should serve people, not exclude them."
+                        </div>
+                        
+                        <ul class="achievements">
+                            <li>Documenting cultural preservation initiatives for Oregon's first Indigenous Museum</li>
+                            <li>50+ photographs featured in digital archives reaching 200,000+ annual visitors</li>
+                            <li>Contributing to heritage preservation through visual storytelling</li>
+                            <li>Featured photographer in museum newsletters and publications</li>
                         </ul>
-                        <div class="job-desc-qualifications">
-                            <div class="job-desc-subtitle">Leadership Impact</div>
-                            <p>85% of team members received promotions under my supervision, and compliance audits maintained 100% pass rate for 5 consecutive years.</p>
+                        
+                        <a href="https://museum.warmsprings-nsn.gov/wp-content/uploads/2025/01/January-2025-News-from-The-Museum-at-Warm-Springs.pdf" 
+                           class="newsletter-link" 
+                           target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                            </svg>
+                            View Featured Work in Museum Newsletter
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- PROFESSIONAL ROLE DEFINITIONS -->
+            <section class="section">
+                <h2 class="section-title collapsed" id="roles-title">
+                    <div class="section-header">
+                        <span>Professional Role Definitions</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                </h2>
+                <div class="section-content collapsed" id="roles-content">
+                    <!-- Technical Product Owner Role -->
+                    <div class="job-description-card">
+                        <div class="job-desc-header">
+                            <div class="job-desc-title">Technical Product Manager / Owner - Decisioning Systems</div>
+                        </div>
+                        <div class="job-desc-content">
+                            <div class="job-desc-summary">
+                                Owned and managed decisioning platforms as Product Owner, aligning technical capabilities with enterprise goals and market needs.
+                            </div>
+                            <ul class="job-desc-list">
+                                <li>Owned product vision and roadmap for decisioning platforms <span class="ownership-badge">Product Owner</span></li>
+                                <li>Aligned strategic vision with stakeholders to shape outcome-based roadmaps</li>
+                                <li>Drove product development with ownership of backlog management</li>
+                                <li>Managed product performance goals including outcomes and customer experience</li>
+                                <li>Owned all engagement for decisioning portfolio throughout SDLC</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Leadership Role Definition -->
+                    <div class="job-description-card">
+                        <div class="job-desc-header">
+                            <div class="job-desc-title">Collections Supervisor & Compliance Mentor</div>
+                        </div>
+                        <div class="job-desc-content">
+                            <div class="job-desc-summary">
+                                Led high-performing collections teams with focus on compliance excellence and talent development.
+                            </div>
+                            <ul class="job-desc-list">
+                                <li>Supervised and mentored collections specialists to achieve performance targets</li>
+                                <li>Developed training programs covering compliance protocols and customer engagement</li>
+                                <li>Conducted quality assurance audits and provided constructive feedback</li>
+                                <li>Created career development pathways for team members</li>
+                                <li>Implemented de-escalation techniques to preserve customer relationships</li>
+                            </ul>
+                            <div class="job-desc-qualifications">
+                                <div class="job-desc-subtitle">Leadership Impact</div>
+                                <p>85% of team members received promotions under Lee's supervision, and compliance audits maintained 100% pass rate for 5 consecutive years.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- EDUCATION & CERTIFICATIONS -->
             <section class="section">
-                <h2 class="section-title">Education & Certifications</h2>
-                <div class="education">
-                    <h4>CGI Strata Certifications</h4>
-                    <p>Advanced Rule Design</p>
-                    <h4 style="margin-top: 15px;">Academic Background</h4>
-                    <p>120+ University Credits | Chemistry Major | University Calculus I, II, III | Linear Algebra | Statistics | C++ | Unix </p>
+                <h2 class="section-title collapsed" id="education-title">
+                    <div class="section-header">
+                        <span>Education & Certifications</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                </h2>
+                <div class="section-content collapsed" id="education-content">
+                    <div class="education">
+                        <h4>CGI Strata Certifications</h4>
+                        <p>Advanced Rule Design</p>
+                        <h4 style="margin-top: 15px;">Academic Background</h4>
+                        <p>120+ University Credits | Majored in Chemistry | Calculus I, II, III | Linear Algebra | Statistics | C++ | Unix </p>
+                    </div>
                 </div>
             </section>
         </main>
@@ -1419,7 +1258,7 @@
             <span>💬</span> Click here to know more about Lee
         </div>
         <div class="chat-window">
-            <div class="chat-header">Sunshine Assistant</div>
+            <div class="chat-header">Resume Assistant</div>
             <div class="chat-messages" id="chat-messages"></div>
             <div class="chat-input">
                 <input type="text" id="user-input" placeholder="Ask about Lee...">
@@ -1427,12 +1266,6 @@
             </div>
         </div>
         <button class="smiley-btn" id="smiley-btn">😊</button>
-    </div>
-
-    <!-- Sunflower assistant -->
-    <div class="sunflower-assistant" id="sunflower-assistant">
-        <div class="sunflower-icon">🌻</div>
-        <div class="welcome-text">Hi! I'm Lee's Sunshine Assistant 🌻</div>
     </div>
 
     <!-- Print Modal -->
@@ -1447,19 +1280,48 @@
             </div>
             
             <div class="print-option" data-print="no-bg">
-                <h4><span class="icon">🎨</span> Print With No Background</h4>
-                <p>Preserves layout and styling without background colors/images</p>
+                <h4><span class="icon">🎨</span> Print Without Backgrounds</h4>
+                <p>Preserves layout without colors for a clean print</p>
             </div>
             
             <div class="print-option" data-print="full-bg">
-                <h4><span class="icon">🖼️</span> Print With Full Background</h4>
-                <p>Print with all colors and design elements (uses more ink)</p>
+                <h4><span class="icon">🖼️</span> Print With Full Design</h4>
+                <p>Print with all colors and design elements</p>
             </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections functionality
+            const sections = [
+                'technical-skills', 
+                'core-impact', 
+                'experience', 
+                'volunteer', 
+                'roles', 
+                'education'
+            ];
+            
+            sections.forEach(section => {
+                const title = document.getElementById(`${section}-title`);
+                const content = document.getElementById(`${section}-content`);
+                
+                // Start with all sections collapsed
+                title.classList.add('collapsed');
+                content.classList.add('collapsed');
+                
+                title.addEventListener('click', function() {
+                    // Toggle collapsed class on title
+                    this.classList.toggle('collapsed');
+                    
+                    // Toggle content visibility
+                    content.classList.toggle('expanded');
+                    content.classList.toggle('collapsed');
+                });
+            });
+            
+            // Chatbot functionality
             const chatbotContainer = document.querySelector('.chatbot-container');
             const chatbotPrompt = document.getElementById('chatbot-prompt');
             const smileyBtn = document.getElementById('smiley-btn');
@@ -1469,28 +1331,12 @@
             const printBtn = document.getElementById('print-btn');
             const printModal = document.getElementById('print-modal');
             const closeModal = document.getElementById('close-modal');
-            const sunflowerAssistant = document.getElementById('sunflower-assistant');
             
             let isFirstInteraction = true;
-            
-            // Show sunflower assistant on page load
-            setTimeout(() => {
-                sunflowerAssistant.classList.add('active');
-            }, 1000);
             
             // Toggle chat window
             function toggleChat() {
                 chatbotContainer.classList.toggle('active');
-                
-                // Hide sunflower when chat is open
-                if (chatbotContainer.classList.contains('active')) {
-                    sunflowerAssistant.style.opacity = '0';
-                    sunflowerAssistant.style.pointerEvents = 'none';
-                } else {
-                    setTimeout(() => {
-                        sunflowerAssistant.style.opacity = '1';
-                    }, 500);
-                }
                 
                 // If it's the first interaction, show the greeting
                 if (isFirstInteraction && chatbotContainer.classList.contains('active')) {
@@ -1505,9 +1351,6 @@
             // Close chat function
             function closeChat() {
                 chatbotContainer.classList.remove('active');
-                setTimeout(() => {
-                    sunflowerAssistant.style.opacity = '1';
-                }, 500);
             }
             
             // Add event listener to close button in chat header
@@ -1524,7 +1367,7 @@
                 const greeting = document.createElement('div');
                 greeting.className = 'message bot-message';
                 greeting.innerHTML = `
-                    <p>Hello, I'm Lee's virtual assistant! 😊</p>
+                    <p>Hello! I'm Lee's virtual assistant. 😊</p>
                     <p>I can tell you about Lee's experience, skills, or volunteer work. Here are some sample questions you can ask:</p>
                 `;
                 chatMessages.appendChild(greeting);
@@ -1565,9 +1408,12 @@
                     chip.addEventListener('click', function() {
                         const questionType = this.getAttribute('data-question');
                         // Append the question as a user message
-                        addMessage(this.textContent.trim(), 'user');
+                        const userMessage = addMessage(this.textContent.trim(), 'user');
+                        
                         // Then handle the question type
-                        handleQuestionType(questionType);
+                        setTimeout(() => {
+                            handleQuestionType(questionType);
+                        }, 500);
                     });
                 });
                 
@@ -1581,13 +1427,13 @@
                 
                 switch(questionType) {
                     case 'experience':
-                        response = "Lee has over 10 years of professional experience in financial technology:\n\n- Technical Product Owner at U.S. Bank (2015-2025):\n  • Owned decisioning platforms and architected 1,000+ business rules\n  • Designed rules for Card Recovery Collections and Realtime-Settlement\n  • Achieved 100% SLA compliance for critical payment systems\n\n- Collections Supervisor & Compliance Mentor (2010-2015):\n  • Led teams of 15+ collections specialists\n  • Maintained 100% compliance audit pass rate\n  • Reduced customer complaints by 35%";
+                        response = "Lee has over 10 years of professional experience in financial technology:\n\n- Technical Product Manager/Owner at U.S. Bank (2015-2025):\n  • Owned decisioning platforms and architected 1,000+ business rules\n  • Designed rules for Card Recovery Collections and Realtime-Settlement\n  • Achieved 100% SLA compliance for critical payment systems\n\n- Collections Supervisor & Compliance Mentor (2010-2015):\n  • Led teams of 15+ collections specialists\n  • Maintained 100% compliance audit pass rate\n  • Reduced customer complaints by 35%";
                         break;
                     case 'tech_skills':
                         response = "Lee's technical expertise includes:\n\n- Decisioning Platforms: CGI Strata, CACS C360\n- Tools & Technologies: SQL, WinSCP/PuTTY, CA Workload Automation AutoSys, JIRA, Python, ServiceNow, GitHub Copilot\n- Methodologies: Agile Scrum, Product Ownership, Enterprise Architecture\n- Leadership: Team Mentoring, Performance Coaching, Compliance Training";
                         break;
                     case 'leadership':
-                        response = "Lee has extensive leadership experience:\n\n- As a Technical Product Manager at U.S. Bank, he led cross-functional teams and drove product vision\n- Served as Collections Supervisor & Compliance Mentor (2010-2015)\n- Supervised 15+ collections specialists with 85% promotion rate\n- Developed training programs and maintained 100% compliance audit pass rate\n- Reduced customer complaints by 35% through empathy-focused training\n- Known for creative problem-solving and removing vendor dependencies";
+                        response = "Lee has extensive leadership experience:\n\n- As a Technical Product Manager/Owner at U.S. Bank, he led cross-functional teams and drove product vision\n- Served as Collections Supervisor & Compliance Mentor (2010-2015)\n- Supervised 15+ collections specialists with 85% promotion rate\n- Developed training programs and maintained 100% compliance audit pass rate\n- Reduced customer complaints by 35% through empathy-focused training\n- Known for creative problem-solving and removing vendor dependencies";
                         break;
                     case 'impact':
                         response = "Lee's core impact includes: \n- Designed 1,000+ production rules in CGI Strata \n- Maintained 100% SLA compliance for 10+ years \n- Achieved $1.5M annual savings through platform modernization \n- Reduced false positives by 35% through rule optimization";
@@ -1606,7 +1452,9 @@
                 addMessage(response, 'bot');
                 
                 // Then show sample questions again
-                showSampleQuestions();
+                setTimeout(() => {
+                    showSampleQuestions();
+                }, 500);
             }
             
             // Send message function
@@ -1637,6 +1485,7 @@
                 
                 // Scroll to bottom
                 chatMessages.scrollTop = chatMessages.scrollHeight;
+                return messageDiv;
             }
             
             // Show typing indicator
@@ -1673,11 +1522,11 @@
                            lowerMessage.includes('supervisor') || 
                            lowerMessage.includes('mentor') || 
                            lowerMessage.includes('👔')) {
-                    response = "Lee has extensive leadership experience:\n\n- As a Technical Product Manager at U.S. Bank, he led cross-functional teams and drove product vision\n- Served as Collections Supervisor & Compliance Mentor (2010-2015)\n- Supervised 15+ collections specialists with 85% promotion rate\n- Developed training programs and maintained 100% compliance audit pass rate\n- Reduced customer complaints by 35% through empathy-focused training\n- Known for creative problem-solving and removing vendor dependencies";
+                    response = "Lee has extensive leadership experience:\n\n- As a Technical Product Manager/Owner at U.S. Bank, he led cross-functional teams and drove product vision\n- Served as Collections Supervisor & Compliance Mentor (2010-2015)\n- Supervised 15+ collections specialists with 85% promotion rate\n- Developed training programs and maintained 100% compliance audit pass rate\n- Reduced customer complaints by 35% through empathy-focused training\n- Known for creative problem-solving and removing vendor dependencies";
                 } else if (lowerMessage.includes('professional role') || lowerMessage.includes('position')) {
-                    response = "Lee's primary role was as a Technical Product Owner for decisioning systems at U.S. Bank (2015-2025). He owned decisioning platforms, architected 1,000+ business rules, and achieved $1.5M in annual savings through platform modernization.";
+                    response = "Lee's primary role was as a Technical Product Manager/Owner for decisioning systems at U.S. Bank (2015-2025). He owned decisioning platforms, architected 1,000+ business rules, and achieved $1.5M in annual savings through platform modernization.";
                 } else if (lowerMessage.includes('experience') || lowerMessage.includes('background')) {
-                    response = "Lee has over 10 years of experience with decisioning platforms. He's designed over 1,000 production rules for financial systems! Key roles include Technical Product Owner for decisioning systems and Collections Supervisor & Compliance Mentor.";
+                    response = "Lee has over 10 years of experience with decisioning platforms. He's designed over 1,000 production rules for financial systems! Key roles include Technical Product Manager/Owner for decisioning systems and Collections Supervisor & Compliance Mentor.";
                 } else if (lowerMessage.includes('core impact') || lowerMessage.includes('achievement')) {
                     response = "Lee's core impact includes: \n- Designed 1,000+ production rules in decisioning systems \n- Maintained 100% SLA compliance for 10+ years \n- Achieved $1.5M annual savings through platform modernization \n- Reduced false positives by 35% through rule optimization";
                 } else if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('phone') || lowerMessage.includes('reach')) {
@@ -1703,7 +1552,7 @@
                 }
             });
             
-            // Print functionality - Enhanced for mobile
+            // Print functionality
             printBtn.addEventListener('click', function() {
                 printModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
@@ -1758,7 +1607,7 @@
             setTimeout(() => {
                 chatbotPrompt.style.opacity = "1";
                 chatbotPrompt.style.transform = "translateY(0)";
-            }, 2000);
+            }, 1000);
         });
     </script>
 </body>
