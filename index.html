@@ -15,8 +15,8 @@
 
         body {
             line-height: 1.6;
-            color: #3E2723;
-            background: #F5F5F1;
+            color: #4A3C31; /* Earthy brown text */
+            background: #F7F4ED; /* Light beige background */
             min-height: 100vh;
             padding: 20px;
             overflow-x: hidden;
@@ -33,7 +33,7 @@
             animation: fadeIn 1s ease-out;
             position: relative;
             z-index: 10;
-            border: 1px solid #D7CCC8;
+            border: 1px solid #DCD6C9; /* Light brown border */
         }
 
         @keyframes fadeIn {
@@ -42,8 +42,8 @@
         }
 
         .header {
-            background: #556B2F;
-            color: #3E2723;
+            background: #6D7D3A; /* Olive green */
+            color: #4A3C31;
             padding: 35px 40px;
             text-align: center;
             position: relative;
@@ -72,18 +72,31 @@
             font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: 0.5px;
-            color: #FFF8E1;
+            color: #F8F5E8; /* Cream color */
+        }
+
+        .professional-title {
+            font-size: 1.25em;
+            font-weight: 500;
+            color: #F8F5E8;
+            margin: 8px 0 15px 0;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            line-height: 1.4;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .availability {
             display: inline-block;
-            background: rgba(62, 39, 35, 0.2);
+            background: rgba(74, 60, 49, 0.2); /* Earthy brown */
             padding: 8px 20px;
             border-radius: 25px;
             margin: 10px 0;
             font-size: 0.95em;
-            border: 1px solid rgba(62, 39, 35, 0.3);
-            color: #FFF8E1;
+            border: 1px solid rgba(74, 60, 49, 0.3);
+            color: #F8F5E8;
         }
 
         .contact-info {
@@ -99,21 +112,21 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(62, 39, 35, 0.15);
+            background: rgba(74, 60, 49, 0.15); /* Earthy brown */
             padding: 8px 18px;
             border-radius: 25px;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            color: #FFF8E1;
+            color: #F8F5E8;
         }
 
         .contact-item:hover {
             transform: translateY(-2px);
-            background: rgba(62, 39, 35, 0.25);
+            background: rgba(74, 60, 49, 0.25);
         }
 
         .contact-link {
-            color: #FFF8E1;
+            color: #F8F5E8;
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -128,7 +141,7 @@
 
         .section {
             margin-bottom: 30px;
-            border-bottom: 1px solid #E0E0E0;
+            border-bottom: 1px solid #E5DFD3; /* Light brown */
             padding-bottom: 20px;
         }
 
@@ -139,7 +152,7 @@
         .section-title {
             font-size: 1.6em;
             font-weight: 600;
-            color: #556B2F;
+            color: #6D7D3A; /* Olive green */
             margin-bottom: 20px;
             padding-bottom: 10px;
             position: relative;
@@ -156,14 +169,14 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background: #8C9E6B;
+            background: #8D956B; /* Light olive brown */
             border-radius: 2px;
         }
 
         .section-title .toggle-icon {
             font-size: 1.2rem;
             transition: transform 0.3s ease;
-            color: #556B2F;
+            color: #6D7D3A;
         }
 
         .section-title.collapsed .toggle-icon {
@@ -191,19 +204,27 @@
 
         .impact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             margin-bottom: 20px;
         }
+        
+        /* Fixed grid for core impact */
+        .impact-grid.fixed-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
 
         .impact-card {
-            background: #F9F9F5;
+            background: #FAF8F3; /* Light beige */
             padding: 20px;
             border-radius: 12px;
-            border-left: 4px solid #8C9E6B;
+            border-left: 4px solid #8D956B; /* Light olive brown */
             transition: all 0.3s ease;
             position: relative;
             box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .impact-card:hover {
@@ -214,22 +235,23 @@
         .impact-number {
             font-size: 1.8em;
             font-weight: 700;
-            color: #556B2F;
+            color: #6D7D3A; /* Olive green */
             margin-bottom: 8px;
         }
 
         .impact-text {
             font-size: 0.95em;
-            color: #4E342E;
+            color: #4A3C31; /* Earthy brown */
             line-height: 1.5;
+            flex-grow: 1;
         }
 
         .experience-item {
             margin-bottom: 25px;
             padding: 20px;
-            background: #F9F9F5;
+            background: #FAF8F3; /* Light beige */
             border-radius: 12px;
-            border-left: 4px solid #8C9E6B;
+            border-left: 4px solid #8D956B; /* Light olive brown */
             transition: all 0.3s ease;
             box-shadow: 0 3px 8px rgba(0,0,0,0.05);
         }
@@ -242,9 +264,9 @@
         .volunteer-item {
             margin-bottom: 25px;
             padding: 20px;
-            background: #F9F9F5;
+            background: #FAF8F3; /* Light beige */
             border-radius: 12px;
-            border-left: 4px solid #8C9E6B;
+            border-left: 4px solid #8D956B; /* Light olive brown */
             transition: all 0.3s ease;
             box-shadow: 0 3px 8px rgba(0,0,0,0.05);
         }
@@ -266,18 +288,18 @@
         .job-title {
             font-size: 1.2em;
             font-weight: 600;
-            color: #3E2723;
+            color: #4A3C31; /* Earthy brown */
         }
 
         .company {
             font-size: 1.1em;
-            color: #556B2F;
+            color: #6D7D3A; /* Olive green */
             font-weight: 500;
         }
 
         .duration {
             font-size: 0.9em;
-            color: #5D4037;
+            color: #5D4A3A; /* Darker brown */
             background: #E8E5E0;
             padding: 5px 12px;
             border-radius: 20px;
@@ -285,7 +307,7 @@
 
         .job-description {
             margin-bottom: 15px;
-            color: #5D4037;
+            color: #5D4A3A; /* Darker brown */
             font-style: italic;
         }
 
@@ -293,9 +315,9 @@
             font-style: italic;
             margin: 15px 0;
             padding: 15px;
-            background: rgba(139, 158, 107, 0.08);
+            background: rgba(141, 149, 107, 0.08); /* Light olive brown */
             border-radius: 10px;
-            border-left: 3px solid #8C9E6B;
+            border-left: 3px solid #8D956B;
         }
 
         .achievements {
@@ -306,24 +328,24 @@
             margin-bottom: 10px;
             padding-left: 25px;
             position: relative;
-            color: #4E342E;
+            color: #4A3C31; /* Earthy brown */
         }
 
         .achievements li::before {
             content: '•';
             position: absolute;
             left: 10px;
-            color: #556B2F;
+            color: #6D7D3A; /* Olive green */
             font-weight: bold;
             font-size: 1.2em;
         }
 
         .highlight {
-            background: rgba(139, 158, 107, 0.15);
+            background: rgba(141, 149, 107, 0.15); /* Light olive brown */
             padding: 2px 6px;
             border-radius: 4px;
             font-weight: 600;
-            color: #3E2723;
+            color: #4A3C31; /* Earthy brown */
         }
 
         .skills-grid {
@@ -331,20 +353,28 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
         }
+        
+        /* Fixed grid for skills */
+        .skills-grid.fixed-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
 
         .skill-category {
-            background: #8C9E6B;
-            color: #FFF8E1;
+            background: #8D956B; /* Light olive brown */
+            color: #F8F5E8; /* Cream color */
             padding: 18px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
             box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .skill-category:hover {
             transform: translateY(-3px);
-            background: #7D8D5F;
+            background: #7C855F; /* Darker olive brown */
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
@@ -356,10 +386,11 @@
         .skill-category p {
             font-size: 0.9em;
             opacity: 0.9;
+            flex-grow: 1;
         }
 
         .education {
-            background: #F9F9F5;
+            background: #FAF8F3; /* Light beige */
             padding: 20px;
             border-radius: 12px;
             text-align: left;
@@ -367,7 +398,7 @@
         }
 
         .education h4 {
-            color: #556B2F;
+            color: #6D7D3A; /* Olive green */
             margin-bottom: 8px;
         }
         
@@ -379,13 +410,52 @@
             width: 100%;
         }
         
+        /* Expand controls */
+        .expand-controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        
+        .expand-btn {
+            background: #8D956B; /* Light olive brown */
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 8px 20px;
+            cursor: pointer;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .expand-btn:hover {
+            background: #7C855F; /* Darker olive brown */
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 900px) {
+            .skills-grid.fixed-grid,
+            .impact-grid.fixed-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
             body { padding: 10px; }
             .header { padding: 25px 15px; }
             .name { font-size: 1.8em; }
+            .professional-title { font-size: 1.05em; }
             .main-content { padding: 20px; }
             .contact-info { flex-direction: column; align-items: center; }
             .job-header { flex-direction: column; align-items: flex-start; }
+            
+            .skills-grid.fixed-grid,
+            .impact-grid.fixed-grid {
+                grid-template-columns: 1fr;
+            }
             
             .print-btn {
                 bottom: 90px;
@@ -403,8 +473,8 @@
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background: #556B2F;
-            color: #FFF8E1;
+            background: #6D7D3A; /* Olive green */
+            color: #F8F5E8; /* Cream color */
             border: none;
             padding: 14px 18px;
             border-radius: 50px;
@@ -421,7 +491,7 @@
         .print-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            background: #475C2A;
+            background: #5A6630; /* Darker olive green */
         }
 
         @media print {
@@ -483,12 +553,12 @@
         .print-options h3 {
             text-align: center;
             margin-bottom: 25px;
-            color: #3E2723;
+            color: #4A3C31; /* Earthy brown */
             font-size: 1.8em;
         }
         
         .print-option {
-            background: #F9F9F5;
+            background: #FAF8F3; /* Light beige */
             border-radius: 15px;
             padding: 20px;
             margin-bottom: 15px;
@@ -500,11 +570,11 @@
         .print-option:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: #8C9E6B;
+            border-color: #8D956B; /* Light olive brown */
         }
         
         .print-option h4 {
-            color: #3E2723;
+            color: #4A3C31; /* Earthy brown */
             margin-bottom: 8px;
             display: flex;
             align-items: center;
@@ -512,13 +582,13 @@
         }
         
         .print-option p {
-            color: #5D4037;
+            color: #5D4A3A; /* Darker brown */
             font-size: 0.95em;
         }
         
         .print-option .icon {
             font-size: 24px;
-            color: #556B2F;
+            color: #6D7D3A; /* Olive green */
         }
         
         .close-modal {
@@ -529,7 +599,7 @@
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: #5D4037;
+            color: #5D4A3A; /* Darker brown */
             z-index: 10;
         }
         
@@ -723,7 +793,7 @@
             /* Print with all backgrounds as is */
         }
         
-        /* CHATBOT STYLES */
+        /* CHATBOT STYLES - REDESIGNED */
         .chatbot-container {
             position: fixed;
             bottom: 30px;
@@ -734,41 +804,11 @@
             align-items: flex-start;
         }
         
-        .chatbot-prompt {
-            background: #8C9E6B;
-            color: #FFF8E1;
-            padding: 10px 15px;
-            border-radius: 25px;
-            margin-bottom: 10px;
-            font-size: 14px;
-            opacity: 0.95;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            animation: pulse 2s infinite;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .chatbot-prompt:hover {
-            opacity: 1;
-            background: #7D8D5F;
-            transform: translateY(-3px);
-        }
-        
-        @keyframes pulse {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0); }
-        }
-        
         .chat-window {
             width: 300px;
             height: 400px;
             background: white;
-            border-radius: 20px 20px 20px 0;
+            border-radius: 20px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             overflow: hidden;
             display: none;
@@ -790,13 +830,33 @@
         }
         
         .chat-header {
-            background: #8C9E6B;
-            color: #FFF8E1;
-            padding: 12px;
-            text-align: center;
+            background: #8D956B; /* Light olive brown */
+            color: #F8F5E8; /* Cream color */
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-weight: 600;
             font-size: 1.1em;
             position: relative;
+            cursor: pointer;
+        }
+        
+        .chat-header-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chat-header-title i {
+            font-size: 1.3em;
+        }
+        
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2em;
             cursor: pointer;
         }
         
@@ -806,7 +866,7 @@
             overflow-y: auto;
             background: #F9F9F7;
             scrollbar-width: thin;
-            scrollbar-color: #8C9E6B #f0f0f0;
+            scrollbar-color: #8D956B #f0f0f0; /* Light olive brown */
         }
         
         .chat-messages::-webkit-scrollbar {
@@ -814,17 +874,18 @@
         }
         
         .chat-messages::-webkit-scrollbar-thumb {
-            background-color: #8C9E6B;
+            background-color: #8D956B; /* Light olive brown */
             border-radius: 3px;
         }
         
         .message {
             margin-bottom: 12px;
-            padding: 10px 14px;
-            border-radius: 16px;
-            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            max-width: 85%;
             animation: messageAppear 0.3s ease-out;
             position: relative;
+            line-height: 1.4;
         }
         
         @keyframes messageAppear {
@@ -863,12 +924,12 @@
         }
         
         .chat-input input:focus {
-            border-color: #8C9E6B;
-            box-shadow: 0 0 0 2px rgba(140, 158, 107, 0.2);
+            border-color: #8D956B; /* Light olive brown */
+            box-shadow: 0 0 0 2px rgba(141, 149, 107, 0.2);
         }
         
         .chat-input button {
-            background: #8C9E6B;
+            background: #8D956B; /* Light olive brown */
             color: white;
             border: none;
             border-radius: 25px;
@@ -880,15 +941,15 @@
         }
         
         .chat-input button:hover {
-            background: #7D8D5F;
+            background: #7C855F; /* Darker olive brown */
             transform: translateY(-2px);
         }
         
         .smiley-btn {
-            width: 55px;
-            height: 55px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: #8C9E6B;
+            background: #8D956B; /* Light olive brown */
             border: none;
             color: white;
             font-size: 32px;
@@ -899,12 +960,14 @@
             justify-content: center;
             transition: all 0.3s ease;
             animation: float 4s ease-in-out infinite;
+            position: relative;
+            z-index: 10;
         }
         
         .smiley-btn:hover {
             transform: scale(1.1) rotate(10deg);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            background: #7D8D5F;
+            background: #7C855F; /* Darker olive brown */
         }
         
         @keyframes float {
@@ -924,7 +987,7 @@
         .typing-dot {
             width: 8px;
             height: 8px;
-            background: #8C9E6B;
+            background: #8D956B; /* Light olive brown */
             border-radius: 50%;
             margin: 0 3px;
             animation: typing 1.4s infinite;
@@ -953,9 +1016,9 @@
         
         .question-chip {
             background: #F0F7EB;
-            border: 1px solid #8C9E6B;
+            border: 1px solid #8D956B; /* Light olive brown */
             border-radius: 20px;
-            padding: 8px 15px;
+            padding: 10px 15px;
             font-size: 0.9em;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -963,14 +1026,77 @@
         }
         
         .question-chip:hover {
-            background: #8C9E6B;
+            background: #8D956B; /* Light olive brown */
             color: white;
             transform: translateX(5px);
         }
         
-        .question-chip i {
-            margin-right: 8px;
-            font-size: 0.9em;
+        .question-chip.hidden {
+            display: none;
+        }
+        
+        /* CHAT NOTIFICATION */
+        .notification-dot {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background: #e74c3c;
+            border-radius: 50%;
+            color: white;
+            font-size: 0.7em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulseDot 1.5s infinite;
+        }
+        
+        @keyframes pulseDot {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* PROFESSIONAL ROLES STYLING */
+        .role-definition {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #FAF8F3; /* Light beige */
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+        }
+
+        .role-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #4A3C31; /* Earthy brown */
+            margin-bottom: 10px;
+        }
+
+        .role-description {
+            font-style: italic;
+            color: #6D7D3A; /* Olive green */
+            margin-bottom: 15px;
+            font-family: Georgia, serif;
+            line-height: 1.5;
+        }
+
+        .role-details {
+            padding-left: 20px;
+        }
+
+        .role-details li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .role-details li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #8D956B; /* Light olive brown */
         }
     </style>
 </head>
@@ -979,6 +1105,10 @@
         <header class="header">
             <div class="header-content">
                 <h1 class="name">LEE EDWARD KAO</h1>
+                <div class="professional-title">
+                    Technical Product Manager & Owner | Enterprise Decisioning Leadership<br>
+                    Driving Compliance, Transformation & Automation at Scale
+                </div>
                 <div class="availability">
                     Available for Full-Time Roles or Consulting Opportunities
                 </div>
@@ -1000,6 +1130,13 @@
         </header>
 
         <main class="main-content">
+            <!-- Expand All Button -->
+            <div class="expand-controls">
+                <button class="expand-btn" id="expand-all-btn">
+                    <i class="fas fa-chevron-down"></i> Expand All Sections
+                </button>
+            </div>
+
             <!-- TECHNICAL SKILLS -->
             <section class="section">
                 <h2 class="section-title collapsed" id="technical-skills-title">
@@ -1009,22 +1146,22 @@
                     </div>
                 </h2>
                 <div class="section-content collapsed" id="technical-skills-content">
-                    <div class="skills-grid">
+                    <div class="skills-grid fixed-grid">
                         <div class="skill-category">
                             <h4>Decisioning Platforms</h4>
                             <p>CGI Strata<br>CACS C360</p>
                         </div>
                         <div class="skill-category">
+                            <h4>Databases & Storage</h4>
+                            <p>Oracle Database<br>MS SQL Server<br>Data Storage & Version Control<br>Microsoft 365</p>
+                        </div>
+                        <div class="skill-category">
                             <h4>Tools & Technologies</h4>
-                            <p>SQL, WinSCP/PuTTY<br>CA Workload Automation AutoSys, JIRA, Python, ServiceNow, GitHub Copilot</p>
+                            <p>SQL, WinSCP/PuTTY<br>CA Workload Automation AutoSys, JIRA<br>Python, ServiceNow, GitHub Copilot<br>IBM Websphere, Shell Scripts, Git</p>
                         </div>
                         <div class="skill-category">
                             <h4>Methodologies</h4>
                             <p>Agile Scrum<br>Product Ownership<br>Enterprise Architecture</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Leadership & Development</h4>
-                            <p>Team Mentoring<br>Performance Coaching<br>Compliance Training<br>Career Development</p>
                         </div>
                     </div>
                 </div>
@@ -1039,7 +1176,7 @@
                     </div>
                 </h2>
                 <div class="section-content collapsed" id="core-impact-content">
-                    <div class="impact-grid">
+                    <div class="impact-grid fixed-grid">
                         <div class="impact-card">
                             <div class="impact-number">1,000+</div>
                             <div class="impact-text">Production rules designed in CGI Strata (largest U.S. Bank implementation)</div>
@@ -1177,7 +1314,7 @@
                 </div>
             </section>
             
-            <!-- PROFESSIONAL ROLE DEFINITIONS -->
+            <!-- PROFESSIONAL ROLE DEFINITIONS (UPDATED) -->
             <section class="section">
                 <h2 class="section-title collapsed" id="roles-title">
                     <div class="section-header">
@@ -1187,44 +1324,35 @@
                 </h2>
                 <div class="section-content collapsed" id="roles-content">
                     <!-- Technical Product Owner Role -->
-                    <div class="job-description-card">
-                        <div class="job-desc-header">
-                            <div class="job-desc-title">Technical Product Manager / Owner - Decisioning Systems</div>
+                    <div class="role-definition">
+                        <div class="role-title">Technical Product Manager / Owner - Decisioning Systems</div>
+                        <div class="role-description">
+                            Owned and managed decisioning platforms as Product Owner, aligning technical capabilities with enterprise goals and market needs.
                         </div>
-                        <div class="job-desc-content">
-                            <div class="job-desc-summary">
-                                Owned and managed decisioning platforms as Product Owner, aligning technical capabilities with enterprise goals and market needs.
-                            </div>
-                            <ul class="job-desc-list">
-                                <li>Owned product vision and roadmap for decisioning platforms <span class="ownership-badge">Product Owner</span></li>
-                                <li>Aligned strategic vision with stakeholders to shape outcome-based roadmaps</li>
-                                <li>Drove product development with ownership of backlog management</li>
-                                <li>Managed product performance goals including outcomes and customer experience</li>
-                                <li>Owned all engagement for decisioning portfolio throughout SDLC</li>
-                            </ul>
-                        </div>
+                        <ul class="role-details">
+                            <li>Owned product vision and roadmap for decisioning platforms as Product Owner</li>
+                            <li>Aligned strategic vision with stakeholders to shape outcome-based roadmaps</li>
+                            <li>Drove product development with ownership of backlog management</li>
+                            <li>Managed product performance goals including outcomes and customer experience</li>
+                            <li>Owned all engagement for decisioning portfolio throughout SDLC</li>
+                        </ul>
                     </div>
                     
                     <!-- Leadership Role Definition -->
-                    <div class="job-description-card">
-                        <div class="job-desc-header">
-                            <div class="job-desc-title">Collections Supervisor & Compliance Mentor</div>
+                    <div class="role-definition">
+                        <div class="role-title">Collections Supervisor & Compliance Mentor</div>
+                        <div class="role-description">
+                            Led high-performing collections teams with focus on compliance excellence and talent development.
                         </div>
-                        <div class="job-desc-content">
-                            <div class="job-desc-summary">
-                                Led high-performing collections teams with focus on compliance excellence and talent development.
-                            </div>
-                            <ul class="job-desc-list">
-                                <li>Supervised and mentored collections specialists to achieve performance targets</li>
-                                <li>Developed training programs covering compliance protocols and customer engagement</li>
-                                <li>Conducted quality assurance audits and provided constructive feedback</li>
-                                <li>Created career development pathways for team members</li>
-                                <li>Implemented de-escalation techniques to preserve customer relationships</li>
-                            </ul>
-                            <div class="job-desc-qualifications">
-                                <div class="job-desc-subtitle">Leadership Impact</div>
-                                <p>85% of team members received promotions under Lee's supervision, and compliance audits maintained 100% pass rate for 5 consecutive years.</p>
-                            </div>
+                        <ul class="role-details">
+                            <li>Supervised and mentored collections specialists to achieve performance targets</li>
+                            <li>Developed training programs covering compliance protocols and customer engagement</li>
+                            <li>Conducted quality assurance audits and provided constructive feedback</li>
+                            <li>Created career development pathways for team members</li>
+                            <li>Implemented de-escalation techniques to preserve customer relationships</li>
+                        </ul>
+                        <div style="margin-top: 15px; font-style: italic; color: #6D7D3A;">
+                            <strong>Leadership Impact:</strong> 85% of team members received promotions under Lee's supervision, and compliance audits maintained 100% pass rate for 5 consecutive years.
                         </div>
                     </div>
                 </div>
@@ -1252,13 +1380,16 @@
 
     <button class="print-btn" id="print-btn">🖨️ Print Resume</button>
     
-    <!-- Chatbot container -->
+    <!-- Chatbot container - REDESIGNED -->
     <div class="chatbot-container">
-        <div class="chatbot-prompt" id="chatbot-prompt">
-            <span>💬</span> Click here to know more about Lee
-        </div>
         <div class="chat-window">
-            <div class="chat-header">Resume Assistant</div>
+            <div class="chat-header">
+                <div class="chat-header-title">
+                    <i class="fas fa-comments"></i>
+                    <span>Resume Assistant</span>
+                </div>
+                <button class="close-chat">✕</button>
+            </div>
             <div class="chat-messages" id="chat-messages"></div>
             <div class="chat-input">
                 <input type="text" id="user-input" placeholder="Ask about Lee...">
@@ -1321,9 +1452,34 @@
                 });
             });
             
-            // Chatbot functionality
+            // Expand All Button Functionality
+            const expandAllBtn = document.getElementById('expand-all-btn');
+            let isExpanded = false;
+            
+            expandAllBtn.addEventListener('click', function() {
+                isExpanded = !isExpanded;
+                sections.forEach(section => {
+                    const title = document.getElementById(`${section}-title`);
+                    const content = document.getElementById(`${section}-content`);
+                    
+                    if (isExpanded) {
+                        title.classList.remove('collapsed');
+                        content.classList.remove('collapsed');
+                        content.classList.add('expanded');
+                    } else {
+                        title.classList.add('collapsed');
+                        content.classList.add('collapsed');
+                        content.classList.remove('expanded');
+                    }
+                });
+                
+                expandAllBtn.innerHTML = isExpanded 
+                    ? '<i class="fas fa-chevron-up"></i> Collapse All Sections' 
+                    : '<i class="fas fa-chevron-down"></i> Expand All Sections';
+            });
+            
+            // Chatbot functionality - REDESIGNED
             const chatbotContainer = document.querySelector('.chatbot-container');
-            const chatbotPrompt = document.getElementById('chatbot-prompt');
             const smileyBtn = document.getElementById('smiley-btn');
             const chatMessages = document.getElementById('chat-messages');
             const userInput = document.getElementById('user-input');
@@ -1331,8 +1487,10 @@
             const printBtn = document.getElementById('print-btn');
             const printModal = document.getElementById('print-modal');
             const closeModal = document.getElementById('close-modal');
+            const closeChat = document.querySelector('.close-chat');
             
             let isFirstInteraction = true;
+            let askedQuestions = []; // Track asked questions
             
             // Toggle chat window
             function toggleChat() {
@@ -1341,22 +1499,13 @@
                 // If it's the first interaction, show the greeting
                 if (isFirstInteraction && chatbotContainer.classList.contains('active')) {
                     isFirstInteraction = false;
+                    askedQuestions = []; // Reset asked questions
                     showGreeting();
                 }
             }
             
             smileyBtn.addEventListener('click', toggleChat);
-            chatbotPrompt.addEventListener('click', toggleChat);
-            
-            // Close chat function
-            function closeChat() {
-                chatbotContainer.classList.remove('active');
-            }
-            
-            // Add event listener to close button in chat header
-            document.querySelector('.chat-header').addEventListener('click', function() {
-                closeChat();
-            });
+            closeChat.addEventListener('click', toggleChat);
             
             // Show greeting with sample questions
             function showGreeting() {
@@ -1380,35 +1529,48 @@
             function showSampleQuestions() {
                 const sampleQuestions = document.createElement('div');
                 sampleQuestions.className = 'sample-questions';
-                sampleQuestions.innerHTML = `
-                    <div class="question-chip" data-question="experience">
-                        <i>💼</i> Lee's Professional Experience
-                    </div>
-                    <div class="question-chip" data-question="tech_skills">
-                        <i>🔧</i> Lee's Technical Skills
-                    </div>
-                    <div class="question-chip" data-question="leadership">
-                        <i>👔</i> Lee's leadership background
-                    </div>
-                    <div class="question-chip" data-question="impact">
-                        <i>🚀</i> What was Lee's core impact?
-                    </div>
-                    <div class="question-chip" data-question="volunteer">
-                        <i>🌻</i> What does Lee do beside work?
-                    </div>
-                    <div class="question-chip" data-question="contact">
-                        <i>📞</i> How can I reach Lee?
-                    </div>
-                `;
+                
+                // Define questions with unique IDs
+                const questions = [
+                    {id: 'exp', icon: '💼', text: "Lee's Professional Experience"},
+                    {id: 'tech', icon: '🔧', text: "Lee's Technical Skills"},
+                    {id: 'leader', icon: '👔', text: "Lee's leadership background"},
+                    {id: 'impact', icon: '🚀', text: "What was Lee's core impact?"},
+                    {id: 'vol', icon: '🌻', text: "What does Lee do beside work?"},
+                    {id: 'contact', icon: '📞', text: "How can I reach Lee?"}
+                ];
+                
+                // Build HTML for questions
+                sampleQuestions.innerHTML = questions.map(q => {
+                    const isHidden = askedQuestions.includes(q.id) ? 'hidden' : '';
+                    return `<div class="question-chip ${isHidden}" 
+                                 data-id="${q.id}" 
+                                 data-question="${q.text.toLowerCase().includes('experience') ? 'experience' : 
+                                              q.text.toLowerCase().includes('skill') ? 'tech_skills' : 
+                                              q.text.toLowerCase().includes('leader') ? 'leadership' : 
+                                              q.text.toLowerCase().includes('impact') ? 'impact' : 
+                                              q.text.toLowerCase().includes('work') ? 'volunteer' : 
+                                              'contact'}">
+                                <i>${q.icon}</i> ${q.text}
+                            </div>`;
+                }).join('');
+                
                 chatMessages.appendChild(sampleQuestions);
                 
                 // Add event listeners to sample questions
-                const questionChips = sampleQuestions.querySelectorAll('.question-chip');
+                const questionChips = sampleQuestions.querySelectorAll('.question-chip:not(.hidden)');
                 questionChips.forEach(chip => {
                     chip.addEventListener('click', function() {
+                        const questionId = this.getAttribute('data-id');
                         const questionType = this.getAttribute('data-question');
+                        const questionText = this.textContent.trim();
+                        
+                        // Mark question as asked
+                        askedQuestions.push(questionId);
+                        this.classList.add('hidden');
+                        
                         // Append the question as a user message
-                        const userMessage = addMessage(this.textContent.trim(), 'user');
+                        addMessage(questionText, 'user');
                         
                         // Then handle the question type
                         setTimeout(() => {
@@ -1420,7 +1582,7 @@
                 // Scroll to bottom
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
-            
+
             // Handle different question types
             function handleQuestionType(questionType) {
                 let response = '';
@@ -1430,7 +1592,7 @@
                         response = "Lee has over 10 years of professional experience in financial technology:\n\n- Technical Product Manager/Owner at U.S. Bank (2015-2025):\n  • Owned decisioning platforms and architected 1,000+ business rules\n  • Designed rules for Card Recovery Collections and Realtime-Settlement\n  • Achieved 100% SLA compliance for critical payment systems\n\n- Collections Supervisor & Compliance Mentor (2010-2015):\n  • Led teams of 15+ collections specialists\n  • Maintained 100% compliance audit pass rate\n  • Reduced customer complaints by 35%";
                         break;
                     case 'tech_skills':
-                        response = "Lee's technical expertise includes:\n\n- Decisioning Platforms: CGI Strata, CACS C360\n- Tools & Technologies: SQL, WinSCP/PuTTY, CA Workload Automation AutoSys, JIRA, Python, ServiceNow, GitHub Copilot\n- Methodologies: Agile Scrum, Product Ownership, Enterprise Architecture\n- Leadership: Team Mentoring, Performance Coaching, Compliance Training";
+                        response = "Lee's technical expertise includes:\n\n- Decisioning Platforms: CGI Strata, CACS C360\n- Databases & Storage: Oracle Database, MS SQL Server\n- Tools & Technologies: SQL, WinSCP/PuTTY, CA Workload Automation AutoSys, JIRA, Python, ServiceNow, GitHub Copilot, IBM Websphere, Shell Scripts, Git\n- Methodologies: Agile Scrum, Product Ownership, Enterprise Architecture";
                         break;
                     case 'leadership':
                         response = "Lee has extensive leadership experience:\n\n- As a Technical Product Manager/Owner at U.S. Bank, he led cross-functional teams and drove product vision\n- Served as Collections Supervisor & Compliance Mentor (2010-2015)\n- Supervised 15+ collections specialists with 85% promotion rate\n- Developed training programs and maintained 100% compliance audit pass rate\n- Reduced customer complaints by 35% through empathy-focused training\n- Known for creative problem-solving and removing vendor dependencies";
@@ -1534,7 +1696,7 @@
                 } else if (lowerMessage.includes('volunteer') || lowerMessage.includes('museum') || lowerMessage.includes('beside work') || lowerMessage.includes('photography') || lowerMessage.includes('stress') || lowerMessage.includes('🌻')) {
                     response = "Outside of work, Lee volunteers at The Museum at Warm Springs, documenting Indigenous cultural preservation through photography. His volunteer work helps him manage stress and includes:\n\n- Documenting cultural initiatives since 2019\n- 50+ photographs featured in museum archives\n- Contributing to heritage preservation through visual storytelling\n- Featured photographer in museum publications\n\nLee finds photography therapeutic and a way to connect with community.";
                 } else if (lowerMessage.includes('skill') || lowerMessage.includes('expert')) {
-                    response = "Lee specializes in decisioning platforms, SQL, AUTOSYS, and Agile methodologies. He's a certified expert in advanced rule design with skills in team mentoring, performance coaching, and career development.";
+                    response = "Lee specializes in:\n- Decisioning Platforms: CGI Strata, CACS C360\n- Databases: Oracle, MS SQL Server\n- Tools: SQL, AUTOSYS, IBM Websphere, Shell Scripts, Git\n- Methodologies: Agile Scrum, Product Ownership";
                 } else if (lowerMessage.includes('help') || lowerMessage.includes('support')) {
                     response = "I can tell you about Lee's experience, skills, volunteer work, or contact information. Try asking about his leadership experience, professional background, or core impact!";
                 } else {
@@ -1602,12 +1764,6 @@
                     }, 500);
                 });
             });
-            
-            // Initial animations
-            setTimeout(() => {
-                chatbotPrompt.style.opacity = "1";
-                chatbotPrompt.style.transform = "translateY(0)";
-            }, 1000);
         });
     </script>
 </body>
