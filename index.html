@@ -15,8 +15,8 @@
 
         body {
             line-height: 1.6;
-            color: #CCCCCC; /* Light Gray body text */
-            background: #2C2C2C; /* Charcoal background */
+            color: #333333; /* Dark gray text */
+            background: #f8f8f8; /* Soft white background */
             min-height: 100vh;
             padding: 20px;
             overflow-x: hidden;
@@ -26,14 +26,14 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: #1E1E1E; /* Darker Charcoal container */
+            background: #ffffff; /* White container */
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             overflow: hidden;
             animation: fadeIn 1s ease-out;
             position: relative;
             z-index: 10;
-            border: 1px solid #3A3A3A;
+            border: 1px solid #eaeaea;
         }
 
         @keyframes fadeIn {
@@ -42,13 +42,13 @@
         }
 
         .header {
-            background: #1E1E1E; /* Dark Charcoal header */
-            color: #CCCCCC;
+            background: #ffffff; /* White header */
+            color: #333333;
             padding: 35px 40px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            border-bottom: 3px solid #00BFFF; /* Cyan accent */
+            border-bottom: 3px solid #e0e0e0; /* Light gray accent */
         }
 
         .name {
@@ -56,13 +56,13 @@
             font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: 0.5px;
-            color: #FFFFFF; /* White for name */
+            color: #222222; /* Darker text for name */
         }
 
         .professional-title {
             font-size: 1.25em;
             font-weight: 500;
-            color: #AEE1F9; /* Ice Blue for title */
+            color: #555555; /* Medium gray for title */
             margin: 8px 0 15px 0;
             letter-spacing: 0.5px;
             line-height: 1.4;
@@ -73,13 +73,13 @@
 
         .availability {
             display: inline-block;
-            background: rgba(0, 136, 204, 0.2); /* Darker cyan */
+            background: #f0f0f0; /* Light gray background */
             padding: 8px 20px;
             border-radius: 25px;
             margin: 10px 0;
             font-size: 0.95em;
-            border: 1px solid rgba(0, 136, 204, 0.3);
-            color: #FFFFFF;
+            border: 1px solid #e0e0e0;
+            color: #444444;
         }
 
         .contact-info {
@@ -95,27 +95,27 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 136, 204, 0.15);
+            background: #f5f5f5;
             padding: 8px 18px;
             border-radius: 25px;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            color: #FFFFFF;
+            color: #444444;
         }
 
         .contact-item:hover {
             transform: translateY(-2px);
-            background: rgba(0, 136, 204, 0.25);
+            background: #eaeaea;
         }
 
         .contact-link {
-            color: #FFFFFF;
+            color: #333333;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .contact-link:hover {
-            color: #AEE1F9; /* Ice Blue on hover */
+            color: #222222;
         }
 
         .main-content {
@@ -124,7 +124,7 @@
 
         .section {
             margin-bottom: 30px;
-            border-bottom: 1px solid #3A3A3A; /* Divider color */
+            border-bottom: 1px solid #eaeaea; /* Light gray divider */
             padding-bottom: 20px;
         }
 
@@ -135,7 +135,7 @@
         .section-title {
             font-size: 1.6em;
             font-weight: 600;
-            color: #AEE1F9; /* Ice Blue for titles */
+            color: #444444; /* Charcoal gray for titles */
             margin-bottom: 20px;
             padding-bottom: 10px;
             position: relative;
@@ -152,14 +152,14 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background: #00BFFF; /* Cyan accent */
+            background: #888888; /* Medium gray accent */
             border-radius: 2px;
         }
 
         .section-title .toggle-icon {
             font-size: 1.2rem;
             transition: transform 0.3s ease;
-            color: #00BFFF;
+            color: #666666;
         }
 
         .section-title.collapsed .toggle-icon {
@@ -197,13 +197,13 @@
         }
 
         .impact-card {
-            background: #2C2C2C; /* Charcoal card background */
+            background: #f9f9f9; /* Very light gray card */
             padding: 20px;
             border-radius: 12px;
-            border-left: 4px solid #00BFFF; /* Cyan accent */
+            border-left: 4px solid #cccccc; /* Medium gray accent */
             transition: all 0.3s ease;
             position: relative;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.03);
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -211,19 +211,19 @@
 
         .impact-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .impact-number {
             font-size: 1.8em;
             font-weight: 700;
-            color: #AEE1F9; /* Ice Blue for numbers */
+            color: #444444; /* Charcoal gray for numbers */
             margin-bottom: 8px;
         }
 
         .impact-text {
             font-size: 0.95em;
-            color: #CCCCCC; /* Light gray text */
+            color: #555555; /* Medium gray text */
             line-height: 1.5;
             flex-grow: 1;
         }
@@ -231,31 +231,31 @@
         .experience-item {
             margin-bottom: 25px;
             padding: 20px;
-            background: #2C2C2C; /* Charcoal card background */
+            background: #f9f9f9; /* Very light gray card */
             border-radius: 12px;
-            border-left: 4px solid #00BFFF; /* Cyan accent */
+            border-left: 4px solid #cccccc; /* Medium gray accent */
             transition: all 0.3s ease;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.03);
         }
 
         .experience-item:hover {
             transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .volunteer-item {
             margin-bottom: 25px;
             padding: 20px;
-            background: #2C2C2C; /* Charcoal card background */
+            background: #f9f9f9; /* Very light gray card */
             border-radius: 12px;
-            border-left: 4px solid #00BFFF; /* Cyan accent */
+            border-left: 4px solid #cccccc; /* Medium gray accent */
             transition: all 0.3s ease;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.03);
         }
 
         .volunteer-item:hover {
             transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .job-header {
@@ -270,26 +270,26 @@
         .job-title {
             font-size: 1.2em;
             font-weight: 600;
-            color: #FFFFFF; /* White for job titles */
+            color: #222222; /* Dark text for job titles */
         }
 
         .company {
             font-size: 1.1em;
-            color: #AEE1F9; /* Ice Blue for company */
+            color: #555555; /* Medium gray for company */
             font-weight: 500;
         }
 
         .duration {
             font-size: 0.9em;
-            color: #FFFFFF;
-            background: rgba(0, 136, 204, 0.2); /* Darker cyan background */
+            color: #444444;
+            background: #f0f0f0; /* Light gray background */
             padding: 5px 12px;
             border-radius: 20px;
         }
 
         .job-description {
             margin-bottom: 15px;
-            color: #CCCCCC;
+            color: #555555;
             font-style: italic;
         }
 
@@ -297,10 +297,10 @@
             font-style: italic;
             margin: 15px 0;
             padding: 15px;
-            background: rgba(0, 136, 204, 0.1); /* Light cyan background */
+            background: #f5f5f5; /* Light gray background */
             border-radius: 10px;
-            border-left: 3px solid #00BFFF; /* Cyan accent */
-            color: #CCCCCC;
+            border-left: 3px solid #cccccc; /* Medium gray accent */
+            color: #444444;
         }
 
         .achievements {
@@ -311,24 +311,24 @@
             margin-bottom: 10px;
             padding-left: 25px;
             position: relative;
-            color: #CCCCCC;
+            color: #444444;
         }
 
         .achievements li::before {
             content: '•';
             position: absolute;
             left: 10px;
-            color: #00BFFF; /* Cyan accent */
+            color: #888888; /* Medium gray accent */
             font-weight: bold;
             font-size: 1.2em;
         }
 
         .highlight {
-            background: rgba(0, 136, 204, 0.15); /* Cyan highlight */
+            background: #f0f0f0; /* Light gray highlight */
             padding: 2px 6px;
             border-radius: 4px;
             font-weight: 600;
-            color: #AEE1F9; /* Ice Blue text */
+            color: #444444; /* Charcoal gray text */
         }
 
         .skills-grid {
@@ -342,29 +342,29 @@
         }
 
         .skill-category {
-            background: #2C2C2C; /* Charcoal card background */
-            color: #CCCCCC;
+            background: #f9f9f9; /* Very light gray card */
+            color: #444444;
             padding: 18px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.03);
             display: flex;
             flex-direction: column;
             height: 100%;
-            border: 1px solid #3A3A3A;
+            border: 1px solid #eaeaea;
         }
 
         .skill-category:hover {
             transform: translateY(-3px);
-            background: #3A3A3A; /* Darker on hover */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+            background: #f5f5f5; /* Slightly darker on hover */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .skill-category h4 {
             margin-bottom: 10px;
             font-size: 1.1em;
-            color: #AEE1F9; /* Ice Blue for headings */
+            color: #444444; /* Charcoal gray for headings */
         }
 
         .skill-category p {
@@ -374,15 +374,15 @@
         }
 
         .education {
-            background: #2C2C2C; /* Charcoal card background */
+            background: #f9f9f9; /* Very light gray card */
             padding: 20px;
             border-radius: 12px;
             text-align: left;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.03);
         }
 
         .education h4 {
-            color: #AEE1F9; /* Ice Blue for headings */
+            color: #444444; /* Charcoal gray for headings */
             margin-bottom: 8px;
         }
         
@@ -400,7 +400,7 @@
         }
         
         .expand-btn {
-            background: #0088CC; /* Darker cyan button */
+            background: #888888; /* Medium gray button */
             color: white;
             border: none;
             border-radius: 25px;
@@ -414,7 +414,7 @@
         }
         
         .expand-btn:hover {
-            background: #00BFFF; /* Cyan on hover */
+            background: #666666; /* Darker gray on hover */
             transform: translateY(-2px);
         }
         
@@ -455,14 +455,14 @@
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background: #0088CC; /* Darker cyan button */
-            color: #FFFFFF;
+            background: #888888; /* Medium gray button */
+            color: #ffffff;
             border: none;
             padding: 14px 18px;
             border-radius: 50px;
             cursor: pointer;
             font-size: 16px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             z-index: 1000;
             display: flex;
@@ -472,28 +472,28 @@
 
         .print-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-            background: #00BFFF; /* Cyan on hover */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            background: #666666; /* Darker gray on hover */
         }
 
         .role-definition {
             margin-bottom: 30px;
             padding: 20px;
-            background: #2C2C2C; /* Charcoal card background */
+            background: #f9f9f9; /* Very light gray card */
             border-radius: 12px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.03);
         }
 
         .role-title {
             font-size: 1.3em;
             font-weight: bold;
-            color: #FFFFFF;
+            color: #222222;
             margin-bottom: 10px;
         }
 
         .role-description {
             font-style: italic;
-            color: #AEE1F9; /* Ice Blue text */
+            color: #555555; /* Medium gray text */
             margin-bottom: 15px;
             font-family: Georgia, serif;
             line-height: 1.5;
@@ -508,14 +508,14 @@
             margin-bottom: 8px;
             position: relative;
             padding-left: 15px;
-            color: #CCCCCC;
+            color: #444444;
         }
 
         .role-details li::before {
             content: "•";
             position: absolute;
             left: 0;
-            color: #00BFFF; /* Cyan accent */
+            color: #888888; /* Medium gray accent */
         }
         
         /* Chatbot styles */
@@ -532,15 +532,15 @@
         .chat-window {
             width: 300px;
             height: 400px;
-            background: #1E1E1E; /* Dark Charcoal */
+            background: #ffffff; /* White background */
             border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             display: none;
             transform: translateY(20px);
             opacity: 0;
             transition: all 0.4s ease;
-            border: 1px solid #00BFFF; /* Cyan border */
+            border: 1px solid #e0e0e0; /* Light gray border */
         }
         
         .chatbot-container.active .chat-window {
@@ -556,8 +556,8 @@
         }
         
         .chat-header {
-            background: #0088CC; /* Darker cyan */
-            color: #FFFFFF;
+            background: #888888; /* Medium gray */
+            color: #ffffff;
             padding: 15px;
             display: flex;
             justify-content: space-between;
@@ -590,9 +590,9 @@
             height: 290px;
             padding: 15px;
             overflow-y: auto;
-            background: #2C2C2C; /* Charcoal background */
+            background: #ffffff; /* White background */
             scrollbar-width: thin;
-            scrollbar-color: #0088CC #2C2C2C; /* Darker cyan */
+            scrollbar-color: #888888 #ffffff; /* Medium gray */
         }
         
         .chat-messages::-webkit-scrollbar {
@@ -600,7 +600,7 @@
         }
         
         .chat-messages::-webkit-scrollbar-thumb {
-            background-color: #0088CC; /* Darker cyan */
+            background-color: #888888; /* Medium gray */
             border-radius: 3px;
         }
         
@@ -620,45 +620,45 @@
         }
         
         .bot-message {
-            background: #3A3A3A; /* Dark gray */
+            background: #f5f5f5; /* Light gray */
             border-bottom-left-radius: 5px;
             align-self: flex-start;
-            color: #CCCCCC;
+            color: #444444;
         }
         
         .user-message {
-            background: #0088CC; /* Darker cyan */
+            background: #888888; /* Medium gray */
             border-bottom-right-radius: 5px;
             margin-left: auto;
-            color: #FFFFFF;
+            color: #ffffff;
         }
         
         .chat-input {
             display: flex;
             padding: 12px;
-            background: #1E1E1E; /* Dark Charcoal */
-            border-top: 1px solid #3A3A3A;
+            background: #ffffff; /* White background */
+            border-top: 1px solid #eaeaea;
         }
         
         .chat-input input {
             flex: 1;
             padding: 10px 14px;
-            border: 1px solid #3A3A3A;
+            border: 1px solid #eaeaea;
             border-radius: 25px;
             outline: none;
             transition: all 0.3s;
             font-size: 14px;
-            background: #2C2C2C; /* Charcoal */
-            color: #CCCCCC;
+            background: #f9f9f9; /* Very light gray */
+            color: #444444;
         }
         
         .chat-input input:focus {
-            border-color: #00BFFF;
-            box-shadow: 0 0 0 2px rgba(0, 191, 255, 0.2);
+            border-color: #888888;
+            box-shadow: 0 0 0 2px rgba(136, 136, 136, 0.1);
         }
         
         .chat-input button {
-            background: #0088CC; /* Darker cyan */
+            background: #888888; /* Medium gray */
             color: white;
             border: none;
             border-radius: 25px;
@@ -670,7 +670,7 @@
         }
         
         .chat-input button:hover {
-            background: #00BFFF; /* Cyan */
+            background: #666666; /* Darker gray */
             transform: translateY(-2px);
         }
         
@@ -678,12 +678,12 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: #0088CC; /* Darker cyan */
+            background: #888888; /* Medium gray */
             border: none;
             color: white;
             font-size: 32px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -695,8 +695,8 @@
         
         .smiley-btn:hover {
             transform: scale(1.1) rotate(10deg);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-            background: #00BFFF; /* Cyan */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background: #666666; /* Darker gray */
         }
         
         @keyframes float {
@@ -708,7 +708,7 @@
         .typing-indicator {
             display: inline-flex;
             align-items: center;
-            background: #3A3A3A;
+            background: #f5f5f5; /* Light gray */
             padding: 8px 15px;
             border-radius: 18px;
         }
@@ -716,7 +716,7 @@
         .typing-dot {
             width: 8px;
             height: 8px;
-            background: #00BFFF; /* Cyan */
+            background: #888888; /* Medium gray */
             border-radius: 50%;
             margin: 0 3px;
             animation: typing 1.4s infinite;
@@ -743,20 +743,20 @@
         }
         
         .question-chip {
-            background: #3A3A3A;
-            border: 1px solid #00BFFF; /* Cyan */
+            background: #f5f5f5; /* Light gray */
+            border: 1px solid #e0e0e0; /* Light gray border */
             border-radius: 20px;
             padding: 10px 15px;
             font-size: 0.9em;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: left;
-            color: #CCCCCC;
+            color: #444444;
         }
         
         .question-chip:hover {
-            background: #00BFFF; /* Cyan */
-            color: #1E1E1E; /* Dark Charcoal */
+            background: #888888; /* Medium gray */
+            color: #ffffff; /* White text */
             transform: translateX(5px);
         }
         
@@ -770,7 +770,7 @@
             right: -5px;
             width: 20px;
             height: 20px;
-            background: #00BFFF; /* Cyan */
+            background: #888888; /* Medium gray */
             border-radius: 50%;
             color: white;
             font-size: 0.7em;
@@ -811,17 +811,17 @@
         }
         
         .print-options {
-            background: #1E1E1E; /* Dark Charcoal */
+            background: #ffffff; /* White background */
             border-radius: 20px;
             padding: 30px;
             width: 100%;
             max-width: 500px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
             transform: translateY(20px);
             transition: transform 0.4s ease;
             max-height: 90vh;
             overflow-y: auto;
-            border: 1px solid #00BFFF; /* Cyan border */
+            border: 1px solid #e0e0e0; /* Light gray border */
         }
         
         .print-modal.active .print-options {
@@ -831,29 +831,29 @@
         .print-options h3 {
             text-align: center;
             margin-bottom: 25px;
-            color: #AEE1F9; /* Ice Blue */
+            color: #444444; /* Charcoal gray */
             font-size: 1.8em;
         }
         
         .print-option {
-            background: #2C2C2C; /* Charcoal */
-            color: #CCCCCC;
+            background: #f9f9f9; /* Very light gray */
+            color: #444444;
             border-radius: 15px;
             padding: 20px;
             margin-bottom: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: 2px solid #3A3A3A;
+            border: 2px solid #eaeaea;
         }
         
         .print-option:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: #00BFFF; /* Cyan */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-color: #888888; /* Medium gray */
         }
         
         .print-option h4 {
-            color: #AEE1F9; /* Ice Blue */
+            color: #444444; /* Charcoal gray */
             margin-bottom: 8px;
             display: flex;
             align-items: center;
@@ -861,13 +861,13 @@
         }
         
         .print-option p {
-            color: #CCCCCC;
+            color: #555555; /* Medium gray */
             font-size: 0.95em;
         }
         
         .print-option .icon {
             font-size: 24px;
-            color: #00BFFF; /* Cyan */
+            color: #888888; /* Medium gray */
         }
         
         .close-modal {
@@ -878,7 +878,7 @@
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: #AEE1F9; /* Ice Blue */
+            color: #444444; /* Charcoal gray */
             z-index: 10;
         }
         
@@ -1066,9 +1066,25 @@
         .print-full-bg {
             /* Print with all backgrounds as is */
         }
+        
+        /* Marble Pattern Decoration */
+        .marble-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(240, 240, 240, 0.2) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(240, 240, 240, 0.2) 0%, transparent 20%),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+            pointer-events: none;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
+    <div class="marble-pattern"></div>
     <div class="container">
         <header class="header">
             <div class="header-content">
@@ -1318,7 +1334,7 @@
                             <li>Created career development pathways for team members</li>
                             <li>Implemented de-escalation techniques to preserve customer relationships</li>
                         </ul>
-                        <div style="margin-top: 15px; font-style: italic; color: #AEE1F9;">
+                        <div style="margin-top: 15px; font-style: italic; color: #555555;">
                             <strong>Leadership Impact:</strong> 85% of team members received promotions under my supervision, and compliance audits maintained 100% pass rate for 5 consecutive years.
                         </div>
                     </div>
@@ -1337,8 +1353,18 @@
                     <div class="education">
                         <h4>CGI Strata Certifications</h4>
                         <p>Advanced Rule Design</p>
+                        
+                        <h4 style="margin-top: 15px;">Current Professional Development</h4>
+                        <p>
+                            <span class="highlight">AI Product Management Intensive (2023)</span><br>
+                            • Python & Data Foundations: Python for Data Science, AI & Development (IBM) - <strong>In Progress</strong><br>
+                            • AI Product Strategy: AI Product Management Specialization (Duke) - Upcoming<br>
+                            • Cloud MLOps: MLOps with Vertex AI (Google) - Upcoming<br>
+                            • Capstone Integration: AI TPM Portfolio - Upcoming
+                        </p>
+                        
                         <h4 style="margin-top: 15px;">Academic Background</h4>
-                        <p>120+ University Credits | Majored in Chemistry | Calculus I, II, III | Linear Algebra | Statistics | C++ | Unix </p>
+                        <p>120+ University Credits | Majored in Chemistry | Calculus I, II, III | Linear Algebra | Statistics | C++ | Unix</p>
                     </div>
                 </div>
             </section>
